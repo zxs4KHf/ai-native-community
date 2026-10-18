@@ -1,0 +1,41 @@
+{
+  "removed_ids": [
+    "copilot",
+    "aibijia",
+    "ztest",
+    "codex-router",
+    "shuncode"
+  ],
+  "updated_entries": {
+    "workbuddy": {
+      "name": "WorkBuddy（国内 / 海外）",
+      "tags": [
+        "办公 Agent",
+        "文档",
+        "调研",
+        "工具调用",
+        "腾讯",
+        "国内版",
+        "海外版",
+        "WorkBuddy AI"
+      ],
+      "purpose": "自主规划办公任务、调用工具、调研并生成可审核的文件成果；国内与海外分别提供入口。",
+      "caution": "国内与海外的账号、可用功能和订阅规则请分别核对；不默认互通，也不承诺免费额度。",
+      "regional_urls": [
+        {
+          "label": "国内版",
+          "url": "https://www.workbuddy.cn/"
+        },
+        {
+          "label": "海外版 · WorkBuddy AI",
+          "url": "https://www.workbuddy.ai/"
+        }
+      ],
+      "verification": {
+        "status": "已核验用途与官方地区入口",
+        "checked_on": "2026-10-18",
+        "source_url": "https://www.workbuddy.cn/announcement/"
+      }
+    }
+  }
+}

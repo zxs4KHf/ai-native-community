@@ -9,7 +9,7 @@
   let legacy=LEGACY_ROUTES[hash];
   if(!legacy && page==='home'){
     const p=params();
-    if(p.has('site')||p.has('siteCategory')||p.has('siteOrigin'))legacy='tools';
+    if(p.has('site')||p.has('siteCategory')||p.has('siteOrigin')||p.has('siteUsage'))legacy='tools';
     else if(p.has('card')||p.has('topic')||p.has('filter'))legacy='guides';
   }
   if(legacy && !document.getElementById(hash) && !(page===legacy)){
@@ -20,7 +20,7 @@
   const groups={start:['tools','subscription','creation'],cost:['subscription','api-cost','cloud'],make:['api-cost','agent','creation','cloud']};
   function update(values,anchor,replace=false){
     const url=new URL(location.href);
-    for(const [key,value] of Object.entries(values)){if(value===null||value==='all'||value==='directory')url.searchParams.delete(key);else url.searchParams.set(key,value);}
+    for(const [key,value] of Object.entries(values)){if(value===null||value==='all'||key==='sort'&&value==='frequent')url.searchParams.delete(key);else url.searchParams.set(key,value);}
     if(anchor)url.hash=anchor;
     history[replace?'replaceState':'pushState'](null,'',url);
     hash=url.hash.slice(1);
@@ -35,7 +35,7 @@
   const cards=$$('.site-card');
   const allowedCategory=new Set($('#site-category')?[...$('#site-category').options].map(o=>o.value):[]);
   const allowedOrigin=new Set(['all','official','third-party','community']);
-  const allowedSort=new Set(['directory','name','category','verified']);
+  const allowedSort=new Set(['frequent','directory','name','category','verified']);
   function renderSites(){
     if(!cards.length)return;
     const p=params();
@@ -44,17 +44,19 @@
     const category=single?'all':allowedCategory.has(p.get('siteCategory'))?p.get('siteCategory'):'all';
     const topic=!single&&Object.hasOwn(topics,p.get('topic'))?p.get('topic'):null;
     const origin=single?'all':allowedOrigin.has(p.get('siteOrigin'))?p.get('siteOrigin'):'all';
-    const sort=allowedSort.has(p.get('sort'))?p.get('sort'):'directory';
+    const sort=allowedSort.has(p.get('sort'))?p.get('sort'):'frequent';
+    const usage=!single&&['frequent','in-use','recommended'].includes(p.get('siteUsage'))?p.get('siteUsage'):'all';
     const query=$('#site-search').value.trim().toLocaleLowerCase();
     const designTag=$('#design-tag')&&[...$('#design-tag').options].some(o=>o.value===p.get('designTag'))?p.get('designTag'):'all';
     let count=0;
     for(const card of cards){
-      const matches=(!single||card.dataset.site===single)&&(category==='all'||card.dataset.category===category)&&(!topic||card.dataset.topics.split(' ').includes(topic))&&(origin==='all'||card.dataset.origin===origin)&&(designTag==='all'||(card.dataset.designTags||'').split(' ').includes(designTag))&&card.dataset.search.toLocaleLowerCase().includes(query);
+      const matches=(!single||card.dataset.site===single)&&(category==='all'||card.dataset.category===category)&&(!topic||card.dataset.topics.split(' ').includes(topic))&&(origin==='all'||card.dataset.origin===origin)&&(usage==='all'||card.dataset.usage.split(' ').includes(usage))&&(designTag==='all'||(card.dataset.designTags||'').split(' ').includes(designTag))&&card.dataset.search.toLocaleLowerCase().includes(query);
       card.hidden=!matches;if(matches)count++;
     }
-    $('#site-category').value=category;$('#site-topic').value=topic||'all';$('#site-origin').value=origin;$('#site-sort').value=sort;
+    $('#site-category').value=category;$('#site-topic').value=topic||'all';$('#site-origin').value=origin;$('#site-sort').value=sort;$('#site-usage').value=usage;
     if($('#design-tag'))$('#design-tag').value=designTag;
-    const ordered=[...cards];
+    const ordered=[...cards].sort((a,b)=>Number(a.dataset.directoryOrder)-Number(b.dataset.directoryOrder));
+    if(sort==='frequent')ordered.sort((a,b)=>Number(a.dataset.frequentOrder)-Number(b.dataset.frequentOrder));
     if(sort==='name')ordered.sort((a,b)=>a.dataset.name.localeCompare(b.dataset.name,'zh-CN'));
     if(sort==='category')ordered.sort((a,b)=>a.dataset.category.localeCompare(b.dataset.category)||a.dataset.name.localeCompare(b.dataset.name,'zh-CN'));
     if(sort==='verified')ordered.sort((a,b)=>b.dataset.verified.localeCompare(a.dataset.verified));
@@ -66,10 +68,10 @@
     $$('[data-category-link]').forEach(link=>{if(link.dataset.categoryLink===category)link.setAttribute('aria-current','true');else link.removeAttribute('aria-current');});
   }
   $('#site-search')?.addEventListener('input',()=>update({site:null},'sites',true));
-  for(const [id,key] of [['site-category','siteCategory'],['site-topic','topic'],['site-origin','siteOrigin'],['site-sort','sort'],['design-tag','designTag']])$('#'+id)?.addEventListener('change',e=>update({[key]:e.target.value,site:null},'sites'));
+  for(const [id,key] of [['site-category','siteCategory'],['site-topic','topic'],['site-origin','siteOrigin'],['site-sort','sort'],['site-usage','siteUsage'],['design-tag','designTag']])$('#'+id)?.addEventListener('change',e=>update({[key]:e.target.value,site:null},'sites'));
   function resetSites(){
     $('#site-search').value='';
-    update({site:null,siteCategory:null,topic:null,filter:null,siteOrigin:null,sort:null,designTag:null},'sites');$('#site-search').focus();
+    update({site:null,siteCategory:null,topic:null,filter:null,siteOrigin:null,siteUsage:null,sort:null,designTag:null},'sites');$('#site-search').focus();
   }
   for(const id of ['reset-sites','empty-reset-sites','clear-site'])$('#'+id)?.addEventListener('click',resetSites);
   const guideCards=$$('.knowledge-card[data-card]');

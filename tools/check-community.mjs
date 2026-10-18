@@ -44,7 +44,9 @@ assert.equal((await worker.fetch(new Request('https://api.190675.xyz/ai-hub/tool
 assert(!texts['index.html'].includes('id="start"')&&!texts['index.html'].includes('id="guides"')&&!texts['index.html'].includes('id="project"'));
 assert(texts['index.html'].includes('AI native 社区'));
 const baseline=JSON.parse(await readFile(resolve(root,'fixtures/legacy-anchors.json'),'utf8'));
-const allIds=new Set(Object.values(ids).flat());for(const id of baseline.all_ids)assert(allIds.has(id),'Lost legacy ID '+id);
+const revisions=JSON.parse(await readFile(resolve(root,'fixtures/catalog-revisions.json'),'utf8'));
+const retiredAnchors=new Set(revisions.removed_ids.map(id=>'site-'+id));
+const allIds=new Set(Object.values(ids).flat());for(const id of baseline.all_ids)if(!retiredAnchors.has(id))assert(allIds.has(id),'Lost legacy ID '+id);
 const guides=JSON.parse(await readFile(resolve(root,'data/guides.json'),'utf8'));
 assert.equal(guides.cards.length,55);assert.equal(guides.original_inventory_count,61);assert.equal(guides.public_inventory_count,55);
 assert(guides.cards.every(c=>['tools','subscription','api-cost','agent','creation','cloud'].includes(c.topic)&&!c.id.startsWith('b')));
@@ -56,6 +58,6 @@ assert.equal(tools.length,9);assert.deepEqual(tools.filter(t=>t.endorsement==='r
 assert(!tools.some(t=>['sharex','idm'].includes(t.id)));assert.equal(tools.find(t=>t.id==='everything').endorsement,'not-rated');assert.equal(tools.find(t=>t.id==='7zip').endorsement,'not-rated');
 assert(!/version_note|installed_version|process_id|process_started|AppData|C:\\/.test(JSON.stringify(tools)));
 assert(texts['style.css'].includes('@media(prefers-reduced-motion:reduce)'));
-const report={status:'passed',checked_at:new Date().toISOString(),independent_pages:pages.length,reviewed_resources:expected.length,original_anchors_retained:baseline.all_ids.length,public_cards:55,private_cards_excluded:6,design_main_sites:18,author_evaluation_characters:101,toolbox_cards:9,user_recommended:['pixpin','manictime'],homepage_contains_no_long_tutorial:true,cross_page_links_passed:true,secret_privacy_scan_passed:true,methods_and_path_isolation_passed:true};
+const report={status:'passed',checked_at:new Date().toISOString(),independent_pages:pages.length,reviewed_resources:expected.length,original_anchors_retained:baseline.all_ids.filter(id=>!retiredAnchors.has(id)).length,retired_site_anchors:[...retiredAnchors],public_cards:55,private_cards_excluded:6,design_main_sites:18,author_evaluation_characters:101,toolbox_cards:9,user_recommended:['pixpin','manictime'],homepage_contains_no_long_tutorial:true,cross_page_links_passed:true,secret_privacy_scan_passed:true,methods_and_path_isolation_passed:true};
 await mkdir(resolve(root,'evidence'),{recursive:true});
 await writeFile(resolve(root,'evidence/community-static-checks.json'),JSON.stringify(report,null,2));console.log(JSON.stringify(report,null,2));
