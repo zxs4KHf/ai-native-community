@@ -1,0 +1,91 @@
+import {readFile,writeFile,mkdir,readdir} from 'node:fs/promises';
+import {resolve,dirname} from 'node:path';
+const root=resolve(import.meta.dirname,'..');
+const load=async name=>JSON.parse(await readFile(resolve(root,'data',name),'utf8'));
+const [sites,guides,design,toolbox,start]=await Promise.all(['sites.json','guides.json','inspiration.json','toolbox.json','start-guide.json'].map(load));
+const esc=value=>String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const template=await readFile(resolve(root,'source/template.html'),'utf8');
+function view(name){
+ const marker=`<div class="view-panel" data-view="${name}">`;const start=template.indexOf(marker);if(start<0)throw Error('Missing source view '+name);
+ const tags=/<\/?div\b[^>]*>/g;tags.lastIndex=start+marker.length;let depth=1,m;
+ while((m=tags.exec(template))){depth+=m[0].startsWith('</')?-1:1;if(!depth)return template.slice(start+marker.length,m.index);}
+ throw Error('Unclosed view '+name);
+}
+const topics={tools:'工具与模型',subscription:'订阅与权益','api-cost':'API与成本',agent:'Agent工作流',creation:'创作与设计',cloud:'云资源与部署'};
+const nav=[['tools','网站导航'],['design','设计灵感'],['guides','实践资料'],['toolbox','效率工具箱'],['community','社区'],['start','第一次来']];
+const url=slug=>'/ai-hub/'+(slug==='home'?'':slug+'/');
+const siteById=new Map(sites.entries.map(e=>[e.id,e]));
+const designById=new Map(design.entries.map(e=>[e.id,e]));
+let sitesHTML=view('home').match(/<!-- SITES:START -->[\s\S]*?<!-- SITES:END -->/)[0];
+sitesHTML=sitesHTML.replace(/<article class="site-card"[^>]*>[\s\S]*?<\/article>/g,card=>{
+ const id=card.match(/data-site="([^"]+)"/)[1],d=designById.get(id);
+ if(!d)return card;
+ card=card.replace('data-site=',`data-design-tags="${esc(d.categories.join(' '))}" data-site=`);
+ const note=`<details class="video-note"><summary>视频提及 · ${esc(d.video_timestamp)} <span aria-hidden="true">↗</span></summary><div><p><strong>Rofix评价 · 简短转述</strong><br>${esc(d.author_evaluation)}</p><p class="fine-print">本站用途按官网资料整理，另见核验范围；视频评价不等于本站实测。</p><a href="${esc(d.video_url)}" target="_blank" rel="noopener noreferrer">查看原视频时间点 ↗</a></div></details>`;
+ return card.replace('<div class="site-actions">',note+'<div class="site-actions">');
+});
+sitesHTML=sitesHTML.replace('<h2 id="sites-title">精选网站，按用途找入口</h2>','<h2 id="sites-title">按任务找网站</h2>');
+const notes=sitesHTML.match(/<details class="catalog-notes">[\s\S]*?<\/details>/)?.[0]||'';
+sitesHTML=sitesHTML.replace(notes,'').replace('class="section-intro"','class="sr-only"').replace('<p class="catalog-footer">',notes+'<p class="catalog-footer">');
+function heading(kicker,title,intro){return `<header class="page-heading"><p class="eyebrow">${esc(kicker)}</p><h1>${esc(title)}</h1><p>${intro}</p></header>`;}
+const destinations=[
+ ['tools','01','网站导航','从对话、编程到API与部署，按任务和身份筛选。',`${sites.entries.length} 个网站`],
+ ['design','02','设计灵感','把动效、组件、品牌与版式参考带进创作。',`视频提及 ${design.entries.length} 站`],
+ ['guides','03','实践资料','读具体的问题、适用条件与失败记录。',`${guides.cards.length} 张公开正文`],
+ ['toolbox','04','效率工具箱','截图、找文件、快捷操作，按实际痛点挑选。',`${toolbox.entries.length} 个工具`],
+ ['start','05','第一次来','从你已经能用的应用，完成第一个可检查的小任务。','独立入门路线'],
+ ['community','06','一起共建','了解社区、资料边界和如何贡献可复核的经验。','贡献与纠错建议']];
+const home=`<section class="community-hero" id="top" aria-labelledby="hero-title"><p class="eyebrow">奥特大出生 · AN AI NATIVE COMMUNITY</p><h1 id="hero-title">AI native 社区<span class="hero-dot" aria-hidden="true">✳</span></h1><p class="hero-lead">把工具、方法与人连接起来，<br>让想法有地方开始，让实践有迹可循。</p><div class="global-search"><label for="global-search">你今天想找什么？</label><div class="global-input"><span aria-hidden="true">⌕</span><input id="global-search" type="search" placeholder="搜索网站、问题或工具，比如：动效、交接、截图…" autocomplete="off"><span class="search-hint" aria-hidden="true">SEARCH</span></div><p id="global-result-count" role="status">搜索网站、知识卡或效率工具</p><div id="global-results" class="global-results" hidden></div></div></section><section aria-labelledby="task-title" class="home-destinations"><div class="section-heading"><h2 id="task-title">从这里，去往你需要的地方。</h2><span class="fine-print">${sites.entries.length} 个网站 · ${guides.cards.length} 张公开卡 · 原整理61卡</span></div><div class="destination-grid">${destinations.map(([slug,index,title,desc,count])=>`<a class="destination-card" href="${url(slug)}"><div><span class="card-index">${index}</span><span class="destination-arrow" aria-hidden="true">↗</span></div><h3>${title}</h3><p>${desc}</p><small>${count}</small></a>`).join('')}</div></section><div class="home-bottom"><span>先找到入口，再逐步深入。</span><a href="${url('start')}">第一次来，看看怎么开始 →</a></div>`;
+const designCards=sitesHTML.replace(/<article class="site-card"[^>]*>[\s\S]*?<\/article>/g,card=>card.includes('data-category="design"')?card:'');
+const designCount=sites.entries.filter(e=>e.category==='design').length;
+let designHTML=designCards.replace('id="sites-title">按任务找网站','id="sites-title">设计参考目录');
+designHTML=designHTML.replace(/独立收录 \d+ 个网站/g,`此页 ${designCount} 个设计资源`).replace(/显示 \d+ \/ \d+ 个网站/g,`显示 ${designCount} / ${designCount} 个网站`);
+designHTML=designHTML.replace('<div class="site-controls">',`<div class="site-controls"><label class="site-select design-tag-filter">创作场景<select id="design-tag"><option value="all">全部设计场景</option>${design.taxonomy.map(t=>`<option value="${esc(t.id)}">${esc(t.label)}</option>`).join('')}</select></label>`);
+const designIntro=heading('DESIGN IN CONTEXT','为创作，找到一份好参考。','按创作场景找入口。视频作者的简短评价与官网用途分开呈现，参考不等于素材授权。');
+const designSource=`<section class="reading-note" id="design-source"><p class="eyebrow">ABOUT THIS COLLECTION</p><h2>这份目录从哪里来？</h2><p>本轮整理来自 <a href="${esc(design.video_source.url)}" target="_blank" rel="noopener noreferrer">Rofix《${esc(design.video_source.title)}》↗</a> 的18个主站，另保留原目录视觉参考。选择时先确定要做动效、界面、品牌、演示还是素材，再回到官网核对使用与授权条件。</p><p>${esc(design.source_limits)}</p><p>用途与访问范围核验日期：${esc(design.prepared_on)}。${esc(design.incidental_note)}</p></section>`;
+let guidesHTML=view('guides').replace(/<div class="community-strip" id="community">[\s\S]*?<\/div>\s*(?=<\/section>)/,'');
+guidesHTML=guidesHTML.replaceAll('访问权限待开放','本站公开正文可读').replaceAll('已设为链接可读','本站公开正文可读');
+const startFull=`<section class="section article-route" id="start-full"><div class="section-heading"><h2>按自己的节奏，走完入门路线</h2><span class="fine-print">来自公开入门页的正文</span></div>${start.sections.map((s,i)=>`<details class="knowledge-card" id="start-step-${i+1}"><summary><span class="guide-category">STEP ${String(i+1).padStart(2,'0')}</span><h3>${esc(s.title)}</h3><span class="guide-expand" aria-hidden="true">＋</span></summary><div class="guide-body">${s.body.map(p=>`<p>${esc(p.replace(/^#{1,5}\s*/,''))}</p>`).join('')}${s.links.map((u,j)=>`<a class="source-reference" href="${esc(u)}" target="_blank" rel="noopener noreferrer">原文公开线索 ${j+1} ↗</a>`).join('')}</div></details>`).join('')}</section>`;
+const community=`<section id="community" class="community-intro"><p class="eyebrow">奥特大出生 · COMMUNITY</p><h1>一起试，一起核对，<br><em>一起做成。</em></h1><p class="hero-lead">这里连接有用的入口、具体的方法与愿意分享实践的人。</p><div class="reading-note"><h2>让经验可以被别人接着用</h2><p>分享一个真实任务、一份可公开的材料和一个能检查的结果。写清来源日期、适用条件、成本与失败情况；纠错时附可复核的依据。</p><p>涉及他人资料先取得授权。本文是贡献与纠错建议，尚不代表群体已通过的规则。</p><p>原资料整理61卡，其中六专题55卡公开迁入本站；其余私有内容保持原权限，不进入公开正文或搜索。</p><a class="text-link" href="https://my.feishu.cn/wiki/M0v4wSlo5iwZgPki6GfcBXY1nKh" target="_blank" rel="noopener noreferrer">从飞书导读继续了解 ↗</a></div></section>`;
+function toolCard(t){return `<article class="tool-card" id="tool-${esc(t.id)}" data-tool="${esc(t.id)}" data-category="${esc(t.category)}" data-endorsement="${esc(t.endorsement)}" data-installation="${esc(t.installation)}" data-search="${esc([t.name,t.purpose,t.scenario,t.pricing].join(' '))}"><div class="site-card-head"><span class="site-category">${esc(toolbox.categories.find(c=>c.id===t.category)?.label||t.category)}</span><span class="evidence-badge ${t.endorsement==='recommended'?'endorsed':''}">${esc(t.evidence_label)}</span></div><h3>${esc(t.name)}</h3><p class="site-purpose">${esc(t.purpose)}</p><p class="tool-evidence">${esc(t.evidence_note)}</p><details class="site-extra"><summary>适合什么场景，怎样开始？ <span>＋</span></summary><div class="guide-body"><p><strong>适合场景</strong><br>${esc(t.scenario)}</p><p><strong>先试这一步</strong><br>${esc(t.first_step)}</p><p><strong>免费与付费</strong><br>${esc(t.pricing)}</p><p><strong>隐私与边界</strong><br>${esc(t.privacy)}</p><p class="fine-print">来源核对：${esc(t.checked_on)}。安装状态和个人推荐分开记录。</p>${t.sources.map(s=>`<a class="source-reference" href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.title)} ↗</a>`).join('')}</div></details><div class="site-actions"><a href="${esc(t.url)}" target="_blank" rel="noopener noreferrer">官方网站 ↗</a><a href="?tool=${esc(t.id)}#toolbox">固定入口 ↗</a></div></article>`;}
+const toolboxHTML=heading('USEFUL, WHEN IT FITS','效率工具箱','从一个日常痛点开始。推荐依据、安装状态与待试用候选各自标明。')+`<section id="toolbox" class="section"><div class="toolbox-controls"><label class="search-field"><span aria-hidden="true">⌕</span><span class="sr-only">搜索效率工具</span><input id="toolbox-search" type="search" placeholder="搜索截图、文件、窗口、剪贴板…" autocomplete="off"></label><label class="site-select">使用场景<select id="toolbox-category"><option value="all">全部场景</option>${toolbox.categories.map(c=>`<option value="${c.id}">${esc(c.label)}</option>`).join('')}</select></label><label class="site-select">推荐依据<select id="toolbox-status"><option value="all">全部工具</option><option value="mine">我的在用推荐</option><option value="observed">已发现，待评价</option><option value="candidate">待试用</option></select></label></div><div class="site-results"><p id="toolbox-result-count" role="status">${toolbox.entries.length} 个工具</p><button id="reset-toolbox" type="button">清除筛选</button></div><div class="tool-grid">${toolbox.entries.map(toolCard).join('')}</div><p id="toolbox-empty" class="empty-state" hidden>没有匹配的工具，可以换一个关键词。</p><p class="catalog-footer">${esc(toolbox.disclosure)}</p></section>`;
+const pages={home,tools:heading('FIND YOUR NEXT TOOL','网站导航','原51站完整保留，设计资源按官网URL去重增量；收录用于发现入口，不等于效果背书。')+sitesHTML,
+ design:designIntro+designHTML+designSource,
+ guides:heading('PRACTICE, WITH CONTEXT','实践资料','55张六专题公开正文，保留来源、条件与失败记录。需要时再展开，历史信息不自动成为现行事实。')+guidesHTML,
+ start:heading('YOUR FIRST VISIT','第一次来，从这里开始。','不用先理解所有名词。用已有的工具和虚构材料，完成一件能检查的小事。')+view('learn')+startFull,
+ workshop:heading('ASK WITH INTENT','提问工作台','把任务、材料与验收说清楚。内容只在你的浏览器内处理。')+view('workshop'),
+ videos:heading('WATCH, THEN TRY','视频导读','先确定想解决的问题，再进入视频中的具体章节。')+view('video')+designSource,
+ community:community+view('sources'),toolbox:toolboxHTML};
+const hashRoutes={top:'home','hero-title':'home','task-title':'home',sites:'tools',atlas:'guides',guides:'guides',start:'start',project:'start',workshop:'workshop',video:'videos',community:'community',sources:'community',toolbox:'toolbox'};
+for(const [slug,content] of Object.entries(pages))for(const m of content.matchAll(/\bid="([^"]+)"/g))if(!Object.hasOwn(hashRoutes,m[1]))hashRoutes[m[1]]=slug;
+function canonicalLinks(content,currentPage){return content.replace(/href="([#?][^"]*)"/g,(match,href)=>{
+ if(href==='#main')return match;
+ const parsed=new URL(href,'https://local/ai-hub/');const id=parsed.hash.slice(1);const target=id==='sites'&&currentPage==='design'?'design':hashRoutes[id]||(parsed.searchParams.has('site')||parsed.searchParams.has('siteCategory')?'tools':parsed.searchParams.has('card')||parsed.searchParams.has('topic')?'guides':'home');
+ return `href="${url(target)}${parsed.search}${parsed.hash}"`;
+ });}
+function sidebar(slug){
+ let body=`<p class="sidebar-kicker">社区索引</p><nav aria-label="社区分区"><a href="/ai-hub/"${slug==='home'?' aria-current="page"':''}>社区首页 <span>↗</span></a>${nav.map(([s,l])=>`<a href="${url(s)}"${slug===s?' aria-current="page"':''}>${l}<span>↗</span></a>`).join('')}</nav>`;
+ if(slug==='tools')body+=`<div class="sidebar-group"><h2>按用途</h2><nav aria-label="用途分类"><a href="${url('tools')}#sites" data-category-link="all">全部网站 <span>${sites.entries.length}</span></a>${sites.categories.map(c=>`<a href="${url('tools')}?siteCategory=${c.id}#sites" data-category-link="${c.id}">${esc(c.label)}<span>${c.count}</span></a>`).join('')}</nav></div>`;
+ if(slug==='design')body+=`<div class="sidebar-group"><h2>创作场景</h2><nav aria-label="设计场景">${design.taxonomy.map(t=>`<a href="${url('design')}?designTag=${t.id}#sites">${esc(t.label)}<span>↗</span></a>`).join('')}</nav></div>`;
+ if(slug==='guides')body+=`<div class="sidebar-group"><h2>知识专题</h2><nav aria-label="知识专题">${Object.entries(topics).map(([id,l])=>`<a href="${url('guides')}?topic=${id}#guides">${l}<span>↗</span></a>`).join('')}</nav></div>`;
+ body+=`<div class="sidebar-group"><h2>随时可用</h2><nav aria-label="实用入口"><a href="${url('workshop')}">提问工作台 <span>↗</span></a><a href="${url('videos')}">视频导读 <span>↗</span></a></nav></div><p class="sidebar-note">把经验留下，<br>让下一次开始更容易。</p>`;
+ return `<aside class="directory-sidebar" aria-label="社区目录">${body}</aside>`;
+}
+const titles={home:'AI native 社区',tools:'网站导航',design:'设计灵感',guides:'实践资料',start:'第一次来',workshop:'提问工作台',videos:'视频导读',community:'一起共建',toolbox:'效率工具箱'};
+const assets={};
+await writeFile(resolve(root,'public/style.css'),await readFile(resolve(root,'source/community.css'),'utf8'));
+for(const [slug,content] of Object.entries(pages)){
+ const header=`<header class="site-header"><a class="brand" href="/ai-hub/" aria-label="AI native 社区，回到首页"><span class="brand-mark" aria-hidden="true">✳</span><span>AI native 社区<small>奥特大出生</small></span></a><nav aria-label="主导航">${nav.map(([s,l])=>`<a href="${url(s)}"${slug===s?' aria-current="page"':''}${s==='start'?' class="first-visit"':''}>${l}</a>`).join('')}</nav></header>`;
+ const html=`<!doctype html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f7f5ef"><meta name="description" content="AI native 社区：连接工具、方法与共同实践。按任务导航到网站、设计灵感、公开资料和效率工具。"><title>${titles[slug]} · 奥特大出生</title><link rel="icon" href="/ai-hub/icon.svg" type="image/svg+xml"><link rel="stylesheet" href="/ai-hub/style.css"><script src="/ai-hub/app.js" defer></script></head><body data-page="${slug}" class="page-${slug}"><a class="skip-link" href="#main">跳到主要内容</a>${header}<div class="directory-shell">${sidebar(slug)}<main id="main">${canonicalLinks(content,slug)}</main></div><footer class="site-footer"><a href="/ai-hub/">AI native 社区 · 奥特大出生</a><span>一起试，一起核对，一起做成。</span><a href="${url('community')}#sources">来源与边界 ↗</a></footer><div class="toast" id="toast" role="status" hidden></div></body></html>\n`;
+ const name=slug==='home'?'index.html':`${slug}/index.html`;
+ const path=resolve(root,'public',name);await mkdir(dirname(path),{recursive:true});await writeFile(path,html);
+ assets[name]={type:'text/html; charset=utf-8',body:html};
+}
+const searchIndex=[...sites.entries.map(s=>({type:designById.has(s.id)?'设计参考':'网站',title:s.name,summary:s.purpose,search:[s.name,s.purpose,...s.tags].join(' '),href:`${url(designById.has(s.id)?'design':'tools')}?site=${s.id}#sites`})),...guides.cards.map(c=>({type:'公开知识卡',title:c.title,summary:topics[c.topic],search:[c.title,...c.body].join(' '),href:`${url('guides')}?card=${c.id}#guides`})),...toolbox.entries.map(t=>({type:'效率工具',title:t.name,summary:t.purpose,search:[t.name,t.purpose,t.scenario,t.evidence_label].join(' '),href:`${url('toolbox')}?tool=${t.id}#toolbox`}))];
+const app=`const SEARCH_INDEX=${JSON.stringify(searchIndex)};\nconst LEGACY_ROUTES=${JSON.stringify(hashRoutes)};\n`+await readFile(resolve(root,'source/app.js'),'utf8');
+await writeFile(resolve(root,'public/app.js'),app);
+for(const [name,type] of [['app.js','text/javascript; charset=utf-8'],['style.css','text/css; charset=utf-8'],['icon.svg','image/svg+xml; charset=utf-8']])assets[name]={type,body:await readFile(resolve(root,'public',name),'utf8')};
+await writeFile(resolve(root,'assets.mjs'),'// Generated from reviewed static community pages.\nexport const assets = '+JSON.stringify(assets)+';\n');
+await mkdir(resolve(root,'evidence'),{recursive:true});
+await writeFile(resolve(root,'evidence/pages-build.json'),JSON.stringify({pages:Object.keys(pages),resources:Object.keys(assets),website_count:sites.entries.length,public_cards:guides.cards.length,toolbox_count:toolbox.entries.length,search_records:searchIndex.length,legacy_hashes:Object.keys(hashRoutes).length},null,2));
+console.log(`Built ${Object.keys(pages).length} independent pages and ${Object.keys(assets).length} reviewed resources; ${sites.entries.length} websites, ${guides.cards.length} public cards, ${toolbox.entries.length} toolbox cards.`);

@@ -1,0 +1,1708 @@
+{
+  "schema_version": "1.0",
+  "prepared_on": "2026-10-18",
+  "categories": [
+    {
+      "id": "conversation",
+      "label": "通用对话",
+      "count": 6
+    },
+    {
+      "id": "research",
+      "label": "搜索研究",
+      "count": 7
+    },
+    {
+      "id": "coding",
+      "label": "编程 Agent",
+      "count": 7
+    },
+    {
+      "id": "api",
+      "label": "API 与中转",
+      "count": 18
+    },
+    {
+      "id": "media",
+      "label": "视频音频",
+      "count": 2
+    },
+    {
+      "id": "office",
+      "label": "办公文档",
+      "count": 2
+    },
+    {
+      "id": "automation",
+      "label": "自动化与知识库",
+      "count": 2
+    },
+    {
+      "id": "design",
+      "label": "设计学习",
+      "count": 19
+    },
+    {
+      "id": "learning",
+      "label": "AI 学习、社区与工具发现",
+      "count": 4
+    },
+    {
+      "id": "cloud",
+      "label": "云部署与接入诊断",
+      "count": 2
+    }
+  ],
+  "entries": [
+    {
+      "id": "chatgpt",
+      "name": "ChatGPT",
+      "identity": "官方产品",
+      "category": "conversation",
+      "tags": [
+        "写作",
+        "网页搜索",
+        "图像",
+        "文件"
+      ],
+      "purpose": "通过对话完成问答、写作、搜索和文件处理。",
+      "url": "https://chatgpt.com/",
+      "topics": [
+        "tools"
+      ],
+      "verification": {
+        "status": "已核验用途",
+        "checked_on": "2026-10-18",
+        "source_url": "https://chatgpt.com/"
+      },
+      "referral": null,
+      "caution": null
+    },
+    {
+      "id": "claude",
+      "name": "Claude",
+      "identity": "官方产品",
+      "category": "conversation",
+      "tags": [
+        "写作",
+        "代码",
+        "研究",
+        "MCP"
+      ],
+      "purpose": "长文本处理、写作、代码与工具连接。",
+      "url": "https://claude.com/",
+      "topics": [
+        "tools"
+      ],
+      "verification": {
+        "status": "已核验用途",
+        "checked_on": "2026-10-18",
+        "source_url": "https://claude.com/"
+      },
+      "referral": null,
+      "caution": null
+    },
+    {
+      "id": "deepseek",
+      "name": "DeepSeek",
+      "identity": "官方产品",
+      "category": "conversation",
+      "tags": [
+        "中文",
+        "推理",
+        "代码"
+      ],
+      "purpose": "DeepSeek 对话与应用的官方入口。",
+      "url": "https://www.deepseek.com/",
+      "topics": [
+        "tools"
+      ],
+      "verification": {
+        "status": "已核验用途",
+        "checked_on": "2026-10-18",
+        "source_url": "https://www.deepseek.com/"
+      },
+      "referral": null,
+      "caution": null
+    },
+    {
+      "id": "grok",
+      "name": "Grok / xAI",
+      "identity": "官方产品",
+      "category": "conversation",
+      "tags": [
+        "推理",
+        "多模态",
+        "API"
+      ],
+      "purpose": "Grok 对话和多模态产品的官方入口。",
+      "url": "https://x.ai/",
+      "topics": [
+        "tools"
+      ],
+      "verification": {
+        "status": "已核验用途",
+        "checked_on": "2026-10-18",
+        "source_url": "https://x.ai/"
+      },
+      "referral": null,
+      "caution": null
+    },
+    {
+      "id": "copilot",
+      "name": "Microsoft Copilot",
+      "identity": "官方产品",
+      "category": "conversation",
+      "tags": [
+        "微软",
+        "助手"
+      ],
+      "purpose": "微软的 AI 对话助手入口。",
+      "url": "https://copilot.com/",
+      "topics": [
+        "tools"
+      ],
+      "verification": {
+        "status": "已核验用途",
+        "checked_on": "2026-10-18",
+        "source_url": "https://copilot.com/"
+      },
+      "referral": null,
+      "caution": null
+    },
+    {
+      "id": "arena",
+      "name": "Arena",
+      "identity": "第三方评测与聚合",
+      "category": "research",
+      "tags": [
+        "模型比较",
+        "榜单",
+        "应用生成"
+      ],
+      "purpose": "查看模型榜单并体验不同 AI 能力。",
+      "url": "https://arena.ai/",
+      "topics": [
+        "tools"
+      ],
+      "verification": {
+        "status": "已核验用途",
+        "checked_on": "2026-10-18",
+        "source_url": "https://arena.ai/"
+      },
+      "referral": null,
+      "caution": null
+    },
+    {
+      "id": "aibijia",
+      "name": "Aibijia",
+      "identity": "第三方信息聚合",
+      "category": "research",
+      "tags": [
+        "订阅比较",
+        "渠道信息"
+      ],
+      "purpose": "汇集 AI 订阅方案和渠道信息，便于回到原站核对。",
+      "url": "https://aibijia.org/",
+      "topics": [
+        "subscription",
+        "api-cost"
+      ],
+      "verification": {
+        "status": "已核验用途",
+        "checked_on": "2026-10-18",
+        "source_url": "https://aibijia.org/"
+      },
+      "referral": null,
+      "caution": null
+    },
+    {
+      "id": "priceai",
+      "name": "PriceAI",
+      "identity": "第三方信息聚合",
+      "category": "research",
+      "tags": [
+        "API 比较",
+        "订阅比较",
+        "来源回查"
+      ],
+      "purpose": "比较官方与第三方订阅、API 信息并回查来源。",
+      "url": "https://priceai.cc/",
+      "topics": [
+        "subscription",
+        "api-cost"
+      ],
+      "verification": {
+        "status": "已核验用途",
+        "checked_on": "2026-10-18",
+        "source_url": "https://priceai.cc/"
+      },
+      "referral": null,
+      "caution": null
+    },
+    {
+      "id": "llmabacus",
+      "name": "算盘 · LLM Abacus",
+      "identity": "第三方信息工具",
+      "category": "research",
+      "tags": [
+        "Token 估算",
+        "API 成本"
+      ],
+      "purpose": "比较模型 API 价格并估算 Token 成本。",
+      "url": "https://www.llmabacus.com/",
+      "topics": [
+        "api-cost"
+      ],
+      "verification": {
+        "status": "已核验用途",
+        "checked_on": "2026-10-18",
+        "source_url": "https://www.llmabacus.com/"
+      },
+      "referral": null,
+      "caution": null
+    },
+    {
+      "id": "ztest",
+      "name": "真测 Ztest",
+      "identity": "第三方核验工具",
+      "category": "research",
+      "tags": [
+        "模型核验",
+        "中转评测"
+      ],
+      "purpose": "查看中转模型探测和服务可用性报告。",
+      "url": "https://ztest.ai/",
+      "topics": [
+        "api-cost",
+        "tools"
+      ],
+      "verification": {
+        "status": "已核验用途",
+        "checked_on": "2026-10-18",
+        "source_url": "https://ztest.ai/"
+      },
+      "referral": null,
+      "caution": "行为探针仅能辅助比较，不能证明模型真实身份。请勿提交生产 API 密钥或敏感数据。"
+    },
+    {
+      "id": "realmodel",
+      "name": "REALMODEL",
+      "identity": "第三方核验工具",
+      "category": "research",
+      "tags": [
+        "模型指纹",
+        "API 核验"
+      ],
+      "purpose": "通过行为探针比较 API 端点的模型特征。",
+      "url": "https://isyouraimodelreal.com/",
+      "topics": [
+        "api-cost",
+        "tools"
+      ],
+      "verification": {
+        "status": "已核验用途",
+        "checked_on": "2026-10-18",
+        "source_url": "https://isyouraimodelreal.com/"
+      },
+      "referral": null,
+      "caution": "行为探针仅能辅助比较，不能证明模型真实身份。请勿提交生产 API 密钥或敏感数据。"
+    },
+    {
+      "id": "modelverify",
+      "name": "ModelVerify.ai",
+      "identity": "第三方核验工具",
+      "category": "research",
+      "tags": [
+        "模型指纹",
+        "兼容性",
+        "延迟"
+      ],
+      "purpose": "检查 API 模型行为、兼容性与延迟。",
+      "url": "https://modelverify.ai/en",
+      "topics": [
+        "api-cost",
+        "tools"
+      ],
+      "verification": {
+        "status": "已核验用途",
+        "checked_on": "2026-10-18",
+        "source_url": "https://modelverify.ai/en"
+      },
+      "referral": null,
+      "caution": "行为探针仅能辅助比较，不能证明模型真实身份。请勿提交生产 API 密钥或敏感数据。"
+    },
+    {
+      "id": "codex",
+      "name": "Codex",
+      "identity": "官方产品",
+      "category": "coding",
+      "tags": [
+        "代码修改",
+        "测试",
+        "审阅"
+      ],
+      "purpose": "让编程 Agent 阅读项目、实现修改并检查结果。",
+      "url": "https://openai.com/codex/",
+      "topics": [
+        "agent"
+      ],
+      "verification": {
+        "status": "已核验用途",
+        "checked_on": "2026-10-18",
+        "source_url": "https://openai.com/codex/"
+      },
+      "referral": null,
+      "caution": null
+    },
+    {
+      "id": "trae",
+      "name": "TRAE",
+      "identity": "官方产品",
+      "category": "coding",
+      "tags": [
+        "IDE",
+        "开发工程师",
+        "办公"
+      ],
+      "purpose": "AI 编程与工作助手，提供国内及国际入口。",
+      "url": "https://www.trae.cn/",
+      "topics": [
+        "agent"
+      ],
+      "verification": {
+        "status": "已核验用途",
+        "checked_on": "2026-10-18",
+        "source_url": "https://www.trae.cn/"
+      },
+      "referral": null,
+      "caution": null
+    },
+    {
+      "id": "devin",
+      "name": "Devin",
+      "identity": "官方产品",
+      "category": "coding",
+      "tags": [
+        "软件工程",
+        "云执行",
+        "浏览器测试"
+      ],
+      "purpose": "执行软件开发任务、测试并准备代码变更。",
+      "url": "https://devin.ai/",
+      "topics": [
+        "agent"
+      ],
+      "verification": {
+        "status": "已核验用途",
+        "checked_on": "2026-10-18",
+        "source_url": "https://devin.ai/"
+      },
+      "referral": null,
+      "caution": null
+    },
+    {
+      "id": "zcode",
+      "name": "ZCode",
+      "identity": "官方产品",
+      "category": "coding",
+      "tags": [
+        "GLM",
+        "本地开发"
+      ],
+      "purpose": "GLM 生态的编程 Harness 与开发工作流。",
+      "url": "https://zcode.z.ai/en",
+      "topics": [
+        "agent"
+      ],
+      "verification": {
+        "status": "已核验用途",
+        "checked_on": "2026-10-18",
+        "source_url": "https://zcode.z.ai/en"
+      },
+      "referral": null,
+      "caution": null
+    },
+    {
+      "id": "codex-router",
+      "name": "Codex Router",
+      "identity": "社区开源工具",
+      "category": "coding",
+      "tags": [
+        "本地代理",
+        "模型路由",
+        "Codex"
+      ],
+      "purpose": "为 Codex App 和 CLI 接入其他模型提供本地路由。",
+      "url": "https://codex-router.com/",
+      "topics": [
+        "agent"
+      ],
+      "verification": {
+        "status": "已核验用途",
+        "checked_on": "2026-10-18",
+        "source_url": "https://codex-router.com/"
+      },
+      "referral": null,
+      "caution": null
+    },
+    {
+      "id": "shuncode",
+      "name": "ShunCode AI",
+      "identity": "第三方软件",
+      "category": "coding",
+      "tags": [
+        "编辑器",
+        "MCP",
+        "本地项目"
+      ],
+      "purpose": "通过编辑器和 MCP 连接网页 AI，读写本地项目。",
+      "url": "https://shuncode.top/",
+      "topics": [
+        "agent"
+      ],
+      "verification": {
+        "status": "已核验用途",
+        "checked_on": "2026-10-18",
+        "source_url": "https://shuncode.top/"
+      },
+      "referral": null,
+      "caution": null
+    },
+    {
+      "id": "agentic-skills",
+      "name": "Agentic Awesome Skills",
+      "identity": "社区开源资源",
+      "category": "automation",
+      "tags": [
+        "Skills",
+        "MCP",
+        "工作流"
+      ],
+      "purpose": "发现并组织编程 Agent 的技能与工作流。",
+      "url": "https://github.com/sickn33/agentic-awesome-skills",
+      "topics": [
+        "agent"
+      ],
+      "verification": {
+        "status": "已核验用途",
+        "checked_on": "2026-10-18",
+        "source_url": "https://github.com/sickn33/agentic-awesome-skills"
+      },
+      "referral": null,
+      "caution": null
+    },
+    {
+      "id": "zivv",
+      "name": "Zivv API",
+      "identity": "第三方中转",
+      "category": "api",
+      "tags": [
+        "统一接口",
+        "Claude",
+        "GPT",
+        "Gemini"
+      ],
+      "purpose": "通过统一网关连接多个模型与兼容协议。",
+      "url": "https://zivv.pro/",
+      "topics": [
+        "api-cost"
+      ],
+      "verification": {
+        "status": "已核验用途",
+        "checked_on": "2026-10-18",
+        "source_url": "https://zivv.pro/"
+      },
+      "referral": {
+        "url": "https://zivv.pro/register?invite=4eb5c7cb",
+        "ownership": "归属已核验",
+        "disclosure": "本人邀请链接，可能获得平台奖励。现金返佣、比例、提现和到账规则均未核验；不承诺折扣或模型真实性。"
+      },
+      "caution": null
+    },
+    {
+      "id": "openrouter",
+      "name": "OpenRouter",
+      "identity": "第三方模型聚合 API",
+      "category": "api",
+      "tags": [
+        "模型路由",
+        "多模态",
+        "统一接口"
+      ],
+      "purpose": "通过统一接口选择多家提供商的模型。",
+      "url": "https://openrouter.ai/",
+      "topics": [
+        "api-cost"
+      ],
+      "verification": {
+        "status": "已核验用途",
+        "checked_on": "2026-10-18",
+        "source_url": "https://openrouter.ai/"
+      },
+      "referral": null,
+      "caution": null
+    },
+    {
+      "id": "sidrune",
+      "name": "Sidrune AI",
+      "identity": "第三方中转",
+      "category": "api",
+      "tags": [
+        "统一网关",
+        "多模型"
+      ],
+      "purpose": "将多个模型接入统一网关并集中管理。",
+      "url": "https://sidrune.ai/",
+      "topics": [
+        "api-cost"
+      ],
+      "verification": {
+        "status": "已核验用途",
+        "checked_on": "2026-10-18",
+        "source_url": "https://sidrune.ai/"
+      },
+      "referral": null,
+      "caution": null
+    },
+    {
+      "id": "nvidia-build",
+      "name": "NVIDIA Build / NIM",
+      "identity": "厂商官方模型平台",
+      "category": "api",
+      "tags": [
+        "推理端点",
+        "模型",
+        "Blueprints"
+      ],
+      "purpose": "试用模型推理端点并查看应用蓝图。",
+      "url": "https://build.nvidia.com/",
+      "topics": [
+        "api-cost"
+      ],
+      "verification": {
+        "status": "已核验用途",
+        "checked_on": "2026-10-18",
+        "source_url": "https://build.nvidia.com/"
+      },
+      "referral": null,
+      "caution": null
+    },
+    {
+      "id": "deepseek-api",
+      "name": "DeepSeek 开放平台",
+      "identity": "厂商官方 API",
+      "category": "api",
+      "tags": [
+        "API",
+        "开发文档"
+      ],
+      "purpose": "接入 DeepSeek 官方模型 API。",
+      "url": "https://platform.deepseek.com/",
+      "topics": [
+        "api-cost"
+      ],
+      "verification": {
+        "status": "已核验用途",
+        "checked_on": "2026-10-18",
+        "source_url": "https://api-docs.deepseek.com/"
+      },
+      "referral": null,
+      "caution": null
+    },
+    {
+      "id": "bailian",
+      "name": "阿里云百炼",
+      "identity": "厂商官方模型平台",
+      "category": "api",
+      "tags": [
+        "千问",
+        "RAG",
+        "应用构建",
+        "多模态"
+      ],
+      "purpose": "调用模型并构建应用、检索与知识库流程。",
+      "url": "https://www.aliyun.com/product/bailian",
+      "topics": [
+        "api-cost",
+        "agent"
+      ],
+      "verification": {
+        "status": "已核验用途",
+        "checked_on": "2026-10-18",
+        "source_url": "https://www.aliyun.com/product/bailian"
+      },
+      "referral": null,
+      "caution": null
+    },
+    {
+      "id": "seko",
+      "name": "Seko",
+      "identity": "官方产品",
+      "category": "media",
+      "tags": [
+        "创作 Agent",
+        "视频",
+        "画布"
+      ],
+      "purpose": "从灵感规划到视频生成的创作工作台。",
+      "url": "https://seko.sensetime.com/",
+      "topics": [
+        "creation"
+      ],
+      "verification": {
+        "status": "已核验用途",
+        "checked_on": "2026-10-18",
+        "source_url": "https://seko.sensetime.com/"
+      },
+      "referral": null,
+      "caution": null
+    },
+    {
+      "id": "pdoomvideo",
+      "name": "PDoomVideo",
+      "identity": "社区开源案例",
+      "category": "media",
+      "tags": [
+        "音乐 MV",
+        "创作流程",
+        "代码示例"
+      ],
+      "purpose": "查看 AI 音乐视频的创作代码案例。",
+      "url": "https://github.com/JohnHeibel/PDoomVideo",
+      "topics": [
+        "creation"
+      ],
+      "verification": {
+        "status": "已核验用途",
+        "checked_on": "2026-10-18",
+        "source_url": "https://github.com/JohnHeibel/PDoomVideo"
+      },
+      "referral": null,
+      "caution": null
+    },
+    {
+      "id": "m365-copilot",
+      "name": "Microsoft 365 Copilot",
+      "identity": "官方产品",
+      "category": "office",
+      "tags": [
+        "文档",
+        "办公"
+      ],
+      "purpose": "Microsoft 365 的 Copilot 办公入口。",
+      "url": "https://m365.cloud.microsoft/",
+      "topics": [
+        "tools"
+      ],
+      "verification": {
+        "status": "已核验用途",
+        "checked_on": "2026-10-18",
+        "source_url": "https://m365.cloud.microsoft/"
+      },
+      "referral": null,
+      "caution": null
+    },
+    {
+      "id": "feishu",
+      "name": "飞书",
+      "identity": "官方协作产品",
+      "category": "automation",
+      "tags": [
+        "知识库",
+        "文档",
+        "工作流",
+        "AI"
+      ],
+      "purpose": "文档、知识库及协作工作流的公共产品入口。",
+      "url": "https://www.feishu.cn/",
+      "topics": [
+        "tools",
+        "agent"
+      ],
+      "verification": {
+        "status": "已核验用途",
+        "checked_on": "2026-10-18",
+        "source_url": "https://www.feishu.cn/"
+      },
+      "referral": null,
+      "caution": null
+    },
+    {
+      "id": "eyecandy",
+      "name": "Eyecandy",
+      "identity": "视觉参考资料库",
+      "category": "design",
+      "tags": [
+        "视觉技法",
+        "镜头",
+        "生成式参考"
+      ],
+      "purpose": "按视觉技法寻找影像参考，可辅助撰写视觉提示。",
+      "url": "https://eyecannndy.com/",
+      "topics": [
+        "creation"
+      ],
+      "verification": {
+        "status": "已核验用途",
+        "checked_on": "2026-10-18",
+        "source_url": "https://eyecannndy.com/"
+      },
+      "referral": null,
+      "caution": null
+    },
+    {
+      "id": "linuxdo-ai",
+      "name": "LINUX DO 人工智能话题",
+      "identity": "社区",
+      "category": "learning",
+      "tags": [
+        "社区",
+        "经验交流"
+      ],
+      "purpose": "阅读人工智能工具与实践话题。",
+      "url": "https://linux.do/tag/444-tag/444",
+      "topics": [
+        "tools",
+        "agent"
+      ],
+      "verification": {
+        "status": "已核验用途",
+        "checked_on": "2026-10-18",
+        "source_url": "https://linux.do/tag/444-tag/444"
+      },
+      "referral": null,
+      "caution": null
+    },
+    {
+      "id": "tudingai",
+      "name": "图钉 AI 导航",
+      "identity": "第三方导航",
+      "category": "learning",
+      "tags": [
+        "工具发现",
+        "教程"
+      ],
+      "purpose": "按用途发现 AI 工具并查阅实操教程。",
+      "url": "https://www.tudingai.com/",
+      "topics": [
+        "tools",
+        "creation"
+      ],
+      "verification": {
+        "status": "已核验用途",
+        "checked_on": "2026-10-18",
+        "source_url": "https://www.tudingai.com/"
+      },
+      "referral": null,
+      "caution": null
+    },
+    {
+      "id": "uuaihub",
+      "name": "UU AI Hub",
+      "identity": "第三方导航",
+      "category": "learning",
+      "tags": [
+        "工具发现",
+        "文章",
+        "分类"
+      ],
+      "purpose": "按助手、写作、编程、图像、视频等分类寻找 AI 工具。",
+      "url": "https://www.uuaihub.com/",
+      "topics": [
+        "tools",
+        "creation"
+      ],
+      "verification": {
+        "status": "已核验用途",
+        "checked_on": "2026-10-18",
+        "source_url": "https://www.uuaihub.com/"
+      },
+      "referral": null,
+      "caution": null
+    },
+    {
+      "id": "chatgpt-learn",
+      "name": "ChatGPT Learn",
+      "identity": "官方学习资源",
+      "category": "learning",
+      "tags": [
+        "AI 入门",
+        "教程"
+      ],
+      "purpose": "学习 ChatGPT 的应用与实践。",
+      "url": "https://learn.chatgpt.com/",
+      "topics": [
+        "tools"
+      ],
+      "verification": {
+        "status": "已核验用途",
+        "checked_on": "2026-10-18",
+        "source_url": "https://learn.chatgpt.com/"
+      },
+      "referral": null,
+      "caution": null
+    },
+    {
+      "id": "net-coffee",
+      "name": "Net.Coffee",
+      "identity": "第三方诊断工具",
+      "category": "cloud",
+      "tags": [
+        "IP",
+        "连通性",
+        "Claude",
+        "GPT"
+      ],
+      "purpose": "检查网络出口、分流与 AI 服务接入环境。",
+      "url": "https://ip.net.coffee/",
+      "topics": [
+        "cloud"
+      ],
+      "verification": {
+        "status": "已核验用途",
+        "checked_on": "2026-10-18",
+        "source_url": "https://ip.net.coffee/"
+      },
+      "referral": null,
+      "caution": null
+    },
+    {
+      "id": "codex-reset",
+      "name": "Codex Reset",
+      "identity": "第三方信息工具",
+      "category": "cloud",
+      "tags": [
+        "额度动态",
+        "非官方跟踪"
+      ],
+      "purpose": "查看第三方整理的 Codex 重置动态与预测。",
+      "url": "https://codex-reset.com/",
+      "topics": [
+        "cloud",
+        "subscription"
+      ],
+      "verification": {
+        "status": "已核验用途",
+        "checked_on": "2026-10-18",
+        "source_url": "https://codex-reset.com/"
+      },
+      "referral": null,
+      "caution": null
+    },
+    {
+      "id": "neko-api",
+      "name": "鑫旺 Neko API",
+      "identity": "第三方中转",
+      "category": "api",
+      "tags": [
+        "统一接口",
+        "模型路由",
+        "OpenAI",
+        "Claude",
+        "Gemini"
+      ],
+      "purpose": "通过统一 API 接入 OpenAI、Claude 和 Gemini 等模型。",
+      "url": "https://790053500.com/",
+      "topics": [
+        "api-cost"
+      ],
+      "verification": {
+        "status": "已核验用途",
+        "checked_on": "2026-10-18",
+        "source_url": "https://790053500.com/"
+      },
+      "referral": {
+        "url": "https://790053500.com/register?aff=JLR769VT5LZP",
+        "ownership": "归属已核验",
+        "disclosure": "本人邀请链接，可能获得平台奖励。现金返佣、比例、提现和到账规则均未核验；不承诺折扣或模型真实性。"
+      },
+      "caution": null
+    },
+    {
+      "id": "callai",
+      "name": "CallAI 中转",
+      "identity": "第三方中转",
+      "category": "api",
+      "tags": [
+        "统一接口",
+        "模型路由",
+        "Claude",
+        "GPT",
+        "Gemini"
+      ],
+      "purpose": "通过统一 API 接入多个模型，并管理路由和按量使用。",
+      "url": "https://sub.callai.one/",
+      "topics": [
+        "api-cost"
+      ],
+      "verification": {
+        "status": "已核验用途",
+        "checked_on": "2026-10-18",
+        "source_url": "https://sub.callai.one/"
+      },
+      "referral": {
+        "url": "https://sub.callai.one/register?aff=3KW7V7KWSKXV",
+        "ownership": "归属已核验",
+        "disclosure": "本人邀请链接，可能获得平台奖励。现金返佣、比例、提现和到账规则均未核验；不承诺折扣或模型真实性。"
+      },
+      "caution": null
+    },
+    {
+      "id": "codex666ai",
+      "name": "codex666ai",
+      "identity": "第三方中转",
+      "category": "api",
+      "tags": [
+        "统一接口",
+        "编程接入",
+        "图像",
+        "视频"
+      ],
+      "purpose": "通过一个 API 接入多个 AI 模型，提供图像、视频与编程工具接入入口。",
+      "url": "https://api.codex666ai.com/",
+      "topics": [
+        "api-cost",
+        "agent",
+        "creation"
+      ],
+      "verification": {
+        "status": "已核验用途",
+        "checked_on": "2026-10-18",
+        "source_url": "https://api.codex666ai.com/"
+      },
+      "referral": {
+        "url": "https://api.codex666ai.com/register?aff=46JPNCPKT9CR",
+        "ownership": "归属已核验",
+        "disclosure": "本人邀请链接，可能获得平台奖励。现金返佣、比例、提现和到账规则均未核验；不承诺折扣或模型真实性。"
+      },
+      "caution": null
+    },
+    {
+      "id": "fengchao",
+      "name": "蜂巢 API",
+      "identity": "第三方中转",
+      "category": "api",
+      "tags": [
+        "统一网关",
+        "模型路由",
+        "团队",
+        "使用管理"
+      ],
+      "purpose": "为个人与团队提供模型 API 网关、路由和使用管理。",
+      "url": "https://fengchao-api.com/",
+      "topics": [
+        "api-cost"
+      ],
+      "verification": {
+        "status": "已核验用途",
+        "checked_on": "2026-10-18",
+        "source_url": "https://fengchao-api.com/"
+      },
+      "referral": {
+        "url": "https://fengchao-api.com/register?aff=3BCUX7QWUQQR",
+        "ownership": "归属已核验",
+        "disclosure": "本人邀请链接，可能获得平台奖励。现金返佣、比例、提现和到账规则均未核验；不承诺折扣或模型真实性。"
+      },
+      "caution": null
+    },
+    {
+      "id": "heju-api",
+      "name": "合聚 API",
+      "identity": "第三方中转",
+      "category": "api",
+      "tags": [
+        "统一接口",
+        "编程接入",
+        "图像",
+        "视频"
+      ],
+      "purpose": "通过统一 API 接入 AI 工作流，提供模型、图像与视频接入入口。",
+      "url": "https://www.hejuapi.com/",
+      "topics": [
+        "api-cost",
+        "agent",
+        "creation"
+      ],
+      "verification": {
+        "status": "已核验用途",
+        "checked_on": "2026-10-18",
+        "source_url": "https://www.hejuapi.com/"
+      },
+      "referral": {
+        "url": "https://www.hejuapi.com/register?invite_code=JoeI",
+        "ownership": "归属已核验",
+        "disclosure": "本人邀请链接，可能获得平台奖励。现金返佣、比例、提现和到账规则均未核验；不承诺折扣或模型真实性。"
+      },
+      "caution": null
+    },
+    {
+      "id": "dragon-api",
+      "name": "DragonAPI",
+      "identity": "第三方中转",
+      "category": "api",
+      "tags": [
+        "统一接口",
+        "编程接入",
+        "图像"
+      ],
+      "purpose": "为编程和图像工作流提供多模型 API 与用量管理。",
+      "url": "https://newapi.dragon3api.com/",
+      "topics": [
+        "api-cost",
+        "agent",
+        "creation"
+      ],
+      "verification": {
+        "status": "已核验用途",
+        "checked_on": "2026-10-18",
+        "source_url": "https://newapi.dragon3api.com/"
+      },
+      "referral": {
+        "url": "https://newapi.dragon3api.com/sign-up?aff=mvKb",
+        "ownership": "归属已核验",
+        "disclosure": "本人邀请链接，可能获得平台奖励。现金返佣、比例、提现和到账规则均未核验；不承诺折扣或模型真实性。"
+      },
+      "caution": null
+    },
+    {
+      "id": "beibei-api",
+      "name": "贝贝 API",
+      "identity": "第三方中转",
+      "category": "api",
+      "tags": [
+        "统一接口",
+        "多模型",
+        "开发接入"
+      ],
+      "purpose": "提供多模型统一 API，以及编程、图像工作流接入入口。",
+      "url": "https://www.bb-api.com/",
+      "topics": [
+        "api-cost",
+        "agent",
+        "creation"
+      ],
+      "verification": {
+        "status": "已核验用途",
+        "checked_on": "2026-10-18",
+        "source_url": "https://www.bb-api.com/"
+      },
+      "referral": {
+        "url": "https://www.bb-api.com/register?aff=YM83YMD7XAUJ",
+        "ownership": "归属已核验",
+        "disclosure": "本人邀请链接，可能获得平台奖励。现金返佣、比例、提现和到账规则均未核验；不承诺折扣或模型真实性。"
+      },
+      "caution": null
+    },
+    {
+      "id": "tokenfactory",
+      "name": "TOKENFACTORY",
+      "identity": "第三方中转",
+      "category": "api",
+      "tags": [
+        "统一接口",
+        "多模型",
+        "开发接入"
+      ],
+      "purpose": "提供模型 API、使用管理及开发接入控制台。",
+      "url": "https://www.acampus.cloud/",
+      "topics": [
+        "api-cost"
+      ],
+      "verification": {
+        "status": "已核验用途",
+        "checked_on": "2026-10-18",
+        "source_url": "https://www.acampus.cloud/"
+      },
+      "referral": {
+        "url": "https://www.acampus.cloud/sign-up?aff=7G5R",
+        "ownership": "归属已核验",
+        "disclosure": "本人邀请链接，可能获得平台奖励。现金返佣、比例、提现和到账规则均未核验；不承诺折扣或模型真实性。"
+      },
+      "caution": null
+    },
+    {
+      "id": "xuanjing",
+      "name": "玄晶",
+      "identity": "第三方中转",
+      "category": "api",
+      "tags": [
+        "统一接口",
+        "视频",
+        "画布"
+      ],
+      "purpose": "通过统一 API 提供 AI 模型接入，含视频接口与画布工具入口。",
+      "url": "https://sub.chatgptallinone.xyz/",
+      "topics": [
+        "api-cost",
+        "creation"
+      ],
+      "verification": {
+        "status": "已核验用途",
+        "checked_on": "2026-10-18",
+        "source_url": "https://sub.chatgptallinone.xyz/"
+      },
+      "referral": null,
+      "caution": null
+    },
+    {
+      "id": "zerocat",
+      "name": "ZeroCat",
+      "identity": "第三方中转",
+      "category": "api",
+      "tags": [
+        "统一接口",
+        "模型路由"
+      ],
+      "purpose": "通过统一 API 访问多个模型提供商并进行模型路由。",
+      "url": "https://zero.cat/",
+      "topics": [
+        "api-cost"
+      ],
+      "verification": {
+        "status": "已核验用途",
+        "checked_on": "2026-10-18",
+        "source_url": "https://zero.cat/"
+      },
+      "referral": null,
+      "caution": null
+    },
+    {
+      "id": "umapis",
+      "name": "悠米 AI 中转（UM APIs）",
+      "identity": "第三方中转",
+      "category": "api",
+      "tags": [
+        "统一接口",
+        "模型网关",
+        "开发接入"
+      ],
+      "purpose": "通过标准统一 API 协议接入多个 AI 模型。",
+      "url": "https://www.umapis.com/",
+      "topics": [
+        "api-cost"
+      ],
+      "verification": {
+        "status": "已核验用途",
+        "checked_on": "2026-10-18",
+        "source_url": "https://www.umapis.com/"
+      },
+      "referral": null,
+      "caution": null
+    },
+    {
+      "id": "owlai",
+      "name": "Owl AI",
+      "identity": "第三方中转",
+      "category": "api",
+      "tags": [
+        "统一接口",
+        "Codex",
+        "Claude Code"
+      ],
+      "purpose": "通过统一 API 接入 Codex、Claude Code 等模型与编程工作流。",
+      "url": "https://api.owlai.tech/",
+      "topics": [
+        "api-cost",
+        "agent"
+      ],
+      "verification": {
+        "status": "已核验用途",
+        "checked_on": "2026-10-18",
+        "source_url": "https://api.owlai.tech/"
+      },
+      "referral": null,
+      "caution": null
+    },
+    {
+      "id": "doubao",
+      "name": "豆包",
+      "identity": "官方产品",
+      "category": "conversation",
+      "tags": [
+        "中文",
+        "对话",
+        "文档",
+        "表格",
+        "自动任务"
+      ],
+      "purpose": "通过对话处理问答、文档和表格，并组织自动任务与工作资料。",
+      "url": "https://www.doubao.com/",
+      "topics": [
+        "tools"
+      ],
+      "verification": {
+        "status": "已核验用途",
+        "checked_on": "2026-10-18",
+        "source_url": "https://www.doubao.com/"
+      },
+      "referral": null,
+      "caution": null
+    },
+    {
+      "id": "workbuddy",
+      "name": "WorkBuddy",
+      "identity": "官方产品",
+      "category": "office",
+      "tags": [
+        "办公 Agent",
+        "文档",
+        "调研",
+        "工具调用",
+        "腾讯"
+      ],
+      "purpose": "自主规划办公任务、调用工具、调研并生成可审核的文件成果。",
+      "url": "https://www.workbuddy.cn/",
+      "topics": [
+        "tools",
+        "agent"
+      ],
+      "verification": {
+        "status": "已核验用途",
+        "checked_on": "2026-10-18",
+        "source_url": "https://www.workbuddy.cn/"
+      },
+      "referral": null,
+      "caution": null
+    },
+    {
+      "id": "codebuddy",
+      "name": "CodeBuddy",
+      "identity": "官方产品",
+      "category": "coding",
+      "tags": [
+        "腾讯",
+        "IDE",
+        "插件",
+        "CLI",
+        "部署"
+      ],
+      "purpose": "通过 AI IDE、插件和 CLI 完成项目开发、设计转代码与部署验证。",
+      "url": "https://copilot.tencent.com/",
+      "topics": [
+        "agent"
+      ],
+      "verification": {
+        "status": "已核验用途",
+        "checked_on": "2026-10-18",
+        "source_url": "https://copilot.tencent.com/"
+      },
+      "referral": null,
+      "caution": null
+    },
+    {
+      "id": "60fps",
+      "name": "60fps",
+      "identity": "设计资源与策展",
+      "category": "design",
+      "tags": [
+        "微交互",
+        "UI/UX",
+        "动效术语"
+      ],
+      "purpose": "移动端与Web产品的UI动效、交互细节灵感库，附可浏览的术语解释。",
+      "url": "https://60fps.design/",
+      "topics": [
+        "creation"
+      ],
+      "verification": {
+        "status": "已核验公开用途",
+        "checked_on": "2026-10-18",
+        "source_url": "https://60fps.design/"
+      },
+      "referral": null,
+      "caution": null
+    },
+    {
+      "id": "navbar-gallery",
+      "name": "Navbar Gallery",
+      "identity": "设计资源与策展",
+      "category": "design",
+      "tags": [
+        "导航设计",
+        "侧栏",
+        "信息架构"
+      ],
+      "purpose": "专注网站导航设计的精选灵感图库。",
+      "url": "https://www.navbar.gallery/",
+      "topics": [
+        "creation"
+      ],
+      "verification": {
+        "status": "已核验公开用途",
+        "checked_on": "2026-10-18",
+        "source_url": "https://www.navbar.gallery/"
+      },
+      "referral": null,
+      "caution": null
+    },
+    {
+      "id": "logobook",
+      "name": "Logobook",
+      "identity": "设计资源与策展",
+      "category": "design",
+      "tags": [
+        "Logo",
+        "符号",
+        "品牌"
+      ],
+      "purpose": "Logo、符号与商标设计资料库；About页确认由Svizra策展，并说明黑白标志筛选原则。",
+      "url": "https://logobook.com/",
+      "topics": [
+        "creation"
+      ],
+      "verification": {
+        "status": "已核验公开用途",
+        "checked_on": "2026-10-18",
+        "source_url": "https://logobook.com/"
+      },
+      "referral": null,
+      "caution": null
+    },
+    {
+      "id": "component-gallery",
+      "name": "The Component Gallery",
+      "identity": "设计资源与策展",
+      "category": "design",
+      "tags": [
+        "组件",
+        "设计系统",
+        "UI/UX"
+      ],
+      "purpose": "以真实设计系统案例为基础的界面组件参考库。",
+      "url": "https://component.gallery/",
+      "topics": [
+        "creation"
+      ],
+      "verification": {
+        "status": "已核验公开用途",
+        "checked_on": "2026-10-18",
+        "source_url": "https://component.gallery/"
+      },
+      "referral": null,
+      "caution": null
+    },
+    {
+      "id": "deck-gallery",
+      "name": "Deck Gallery",
+      "identity": "设计资源与策展",
+      "category": "design",
+      "tags": [
+        "PPT",
+        "演示",
+        "版式"
+      ],
+      "purpose": "经过筛选的整套演示文稿与幻灯片，含报告、品牌规范和提案。",
+      "url": "https://www.deck.gallery/",
+      "topics": [
+        "creation"
+      ],
+      "verification": {
+        "status": "已核验公开用途",
+        "checked_on": "2026-10-18",
+        "source_url": "https://www.deck.gallery/"
+      },
+      "referral": null,
+      "caution": null
+    },
+    {
+      "id": "visual-journal",
+      "name": "Visual Journal",
+      "identity": "设计资源与策展",
+      "category": "design",
+      "tags": [
+        "品牌",
+        "平面",
+        "编辑设计"
+      ],
+      "purpose": "由Alessandro Scarpellini策展的品牌、编辑与平面设计项目。",
+      "url": "https://visualjournal.it/",
+      "topics": [
+        "creation"
+      ],
+      "verification": {
+        "status": "已核验公开用途",
+        "checked_on": "2026-10-18",
+        "source_url": "https://visualjournal.it/"
+      },
+      "referral": null,
+      "caution": null
+    },
+    {
+      "id": "rebrand-gallery",
+      "name": "Rebrand Gallery",
+      "identity": "设计资源与策展",
+      "category": "design",
+      "tags": [
+        "品牌重塑",
+        "视觉识别",
+        "发布视频"
+      ],
+      "purpose": "以品牌重塑为核心，提供发布视频、标志和视觉识别的分类参考。",
+      "url": "https://www.rebrand.gallery/",
+      "topics": [
+        "creation"
+      ],
+      "verification": {
+        "status": "已核验公开用途",
+        "checked_on": "2026-10-18",
+        "source_url": "https://www.rebrand.gallery/"
+      },
+      "referral": null,
+      "caution": null
+    },
+    {
+      "id": "brandguidelines",
+      "name": "Brandguidelines.net",
+      "identity": "设计资源与策展",
+      "category": "design",
+      "tags": [
+        "品牌规范",
+        "VI",
+        "品牌手册"
+      ],
+      "purpose": "精选品牌指南和规范文档的目录，可转到原品牌资料或文档。",
+      "url": "https://www.brandguidelines.net/",
+      "topics": [
+        "creation"
+      ],
+      "verification": {
+        "status": "已核验公开用途",
+        "checked_on": "2026-10-18",
+        "source_url": "https://www.brandguidelines.net/"
+      },
+      "referral": null,
+      "caution": null
+    },
+    {
+      "id": "minimal-gallery",
+      "name": "Minimal Gallery",
+      "identity": "设计资源与策展",
+      "category": "design",
+      "tags": [
+        "网页",
+        "极简",
+        "灵感"
+      ],
+      "purpose": "人工精选的网站设计灵感，并提供模板与工具等资源。",
+      "url": "https://minimal.gallery/",
+      "topics": [
+        "creation"
+      ],
+      "verification": {
+        "status": "已核验公开用途",
+        "checked_on": "2026-10-18",
+        "source_url": "https://minimal.gallery/"
+      },
+      "referral": null,
+      "caution": null
+    },
+    {
+      "id": "desengs-minimum",
+      "name": "DesEngs Minimum",
+      "identity": "设计资源与策展",
+      "category": "design",
+      "tags": [
+        "极简",
+        "个人站",
+        "网页"
+      ],
+      "purpose": "DesEngs的极简网站目录，供浏览清晰克制的网页实例。",
+      "url": "https://desengs.com/minimum/",
+      "topics": [
+        "creation"
+      ],
+      "verification": {
+        "status": "已核验公开用途",
+        "checked_on": "2026-10-18",
+        "source_url": "https://desengs.com/minimum/"
+      },
+      "referral": null,
+      "caution": null
+    },
+    {
+      "id": "a1-gallery",
+      "name": "A1",
+      "identity": "设计资源与策展",
+      "category": "design",
+      "tags": [
+        "网页",
+        "排版",
+        "交互"
+      ],
+      "purpose": "人工精选的网站设计灵感图库，可浏览整站、页面、区块和OG图，并按多种设计属性找参考。",
+      "url": "https://www.a1.gallery/",
+      "topics": [
+        "creation"
+      ],
+      "verification": {
+        "status": "已核验公开用途",
+        "checked_on": "2026-10-18",
+        "source_url": "https://www.a1.gallery/"
+      },
+      "referral": null,
+      "caution": null
+    },
+    {
+      "id": "recent-design",
+      "name": "Recent Design",
+      "identity": "设计资源与策展",
+      "category": "design",
+      "tags": [
+        "设计趋势",
+        "综合灵感",
+        "视觉"
+      ],
+      "purpose": "收集近期设计灵感的平台，覆盖网页、界面、品牌、动效、插画、海报与印刷，并有按资产类型细分的浏览入口。",
+      "url": "https://recent.design/",
+      "topics": [
+        "creation"
+      ],
+      "verification": {
+        "status": "已核验公开用途",
+        "checked_on": "2026-10-18",
+        "source_url": "https://recent.design/"
+      },
+      "referral": null,
+      "caution": null
+    },
+    {
+      "id": "one-page-love",
+      "name": "One Page Love",
+      "identity": "设计资源与策展",
+      "category": "design",
+      "tags": [
+        "单页网站",
+        "落地页",
+        "网页"
+      ],
+      "purpose": "单页网站设计灵感、区块案例与模板资源平台，官方称从2008年开始人工挑选。",
+      "url": "https://onepagelove.com/",
+      "topics": [
+        "creation"
+      ],
+      "verification": {
+        "status": "已核验公开用途",
+        "checked_on": "2026-10-18",
+        "source_url": "https://onepagelove.com/"
+      },
+      "referral": null,
+      "caution": null
+    },
+    {
+      "id": "see-saw",
+      "name": "SEE+SAW",
+      "identity": "设计资源与策展",
+      "category": "design",
+      "tags": [
+        "网页",
+        "交互",
+        "动态预览"
+      ],
+      "purpose": "手工挑选并每日更新的网站设计灵感集合，按产品/行业场景组织。",
+      "url": "https://www.seesaw.website/",
+      "topics": [
+        "creation"
+      ],
+      "verification": {
+        "status": "已核验公开用途",
+        "checked_on": "2026-10-18",
+        "source_url": "https://www.seesaw.website/"
+      },
+      "referral": null,
+      "caution": null
+    },
+    {
+      "id": "supahero",
+      "name": "Supahero",
+      "identity": "设计资源与策展",
+      "category": "design",
+      "tags": [
+        "Hero",
+        "首屏",
+        "落地页"
+      ],
+      "purpose": "专注网站Hero首屏区块的精选灵感库。",
+      "url": "https://supahero.io/",
+      "topics": [
+        "creation"
+      ],
+      "verification": {
+        "status": "已核验公开用途",
+        "checked_on": "2026-10-18",
+        "source_url": "https://supahero.io/"
+      },
+      "referral": null,
+      "caution": "已核对公开官网用途；未验证服务效果、授权适用性或购买权益。 原域仍提供图库，页面注明现属 screensdesign.com。"
+    },
+    {
+      "id": "grainient",
+      "name": "Grainient",
+      "identity": "设计资源与策展",
+      "category": "design",
+      "tags": [
+        "渐变",
+        "背景",
+        "配色"
+      ],
+      "purpose": "渐变与背景素材资源平台，包含颗粒/平滑渐变、动画渐变、AI背景和实时Shader工具。",
+      "url": "https://grainient.supply/",
+      "topics": [
+        "creation"
+      ],
+      "verification": {
+        "status": "已核验公开用途",
+        "checked_on": "2026-10-18",
+        "source_url": "https://grainient.supply/"
+      },
+      "referral": null,
+      "caution": null
+    },
+    {
+      "id": "posts-design",
+      "name": "Posts Design",
+      "identity": "设计资源与策展",
+      "category": "design",
+      "tags": [
+        "广告",
+        "社交帖",
+        "营销"
+      ],
+      "purpose": "品牌社交媒体帖子、页眉和OG图片的设计参考库，按用途、主题、品牌和作者组织。",
+      "url": "https://posts.design/",
+      "topics": [
+        "creation"
+      ],
+      "verification": {
+        "status": "已核验公开用途",
+        "checked_on": "2026-10-18",
+        "source_url": "https://posts.design/"
+      },
+      "referral": null,
+      "caution": null
+    },
+    {
+      "id": "youworkforthem",
+      "name": "YouWorkForThem",
+      "identity": "设计资源与策展",
+      "category": "design",
+      "tags": [
+        "字体",
+        "图形",
+        "素材授权"
+      ],
+      "purpose": "字体、图形、照片、视频与设计附加素材的授权市场。",
+      "url": "https://www.youworkforthem.com/",
+      "topics": [
+        "creation"
+      ],
+      "verification": {
+        "status": "首页访问受限；部分官网页可读",
+        "checked_on": "2026-10-18",
+        "source_url": "https://www.youworkforthem.com/"
+      },
+      "referral": null,
+      "caution": "首页访问受限（403），部分官方产品页可读。"
+    }
+  ]
+}

@@ -1,0 +1,330 @@
+{
+  "schema_version": "1.0",
+  "categories": [
+    {
+      "id": "capture",
+      "label": "截图与OCR"
+    },
+    {
+      "id": "files",
+      "label": "文件搜索与整理"
+    },
+    {
+      "id": "windows",
+      "label": "窗口与快捷操作"
+    },
+    {
+      "id": "clipboard",
+      "label": "剪贴板与文本"
+    },
+    {
+      "id": "reading",
+      "label": "阅读与记录"
+    }
+  ],
+  "entries": [
+    {
+      "id": "pixpin",
+      "name": "PixPin",
+      "category": "capture",
+      "purpose": "截图、标注与文字提取。",
+      "scenario": "记录画面、从截图中提取文字，减少重复输入。",
+      "first_step": "打开已有的PixPin，用一张非敏感截图试做标注和文字提取。",
+      "pricing": "免费与付费功能范围以官网说明为准；本站未核对当前套餐权益。",
+      "privacy": "识别或复制内容前，先确认画面中没有账号秘密或他人私人信息。",
+      "url": "https://pixpin.cn/",
+      "sources": [
+        {
+          "title": "PixPin官网",
+          "url": "https://pixpin.cn/"
+        }
+      ],
+      "endorsement": "recommended",
+      "installation": "user-confirmed",
+      "evidence_label": "用户实用推荐",
+      "evidence_note": "用户在本轮明确表示已亲自试用且认为好用；不扩写使用历史。",
+      "checked_on": "2026-10-18"
+    },
+    {
+      "id": "everything",
+      "name": "Everything",
+      "category": "files",
+      "purpose": "快速按文件名找项目、截图、PDF 和下载文件。先补齐每天反复翻文件夹的这一环。",
+      "scenario": "适合从设计素材、AI coding 项目、飞书下载附件里找回已落盘的文件。场景适配为调研判断，不是用户实测结论。",
+      "first_step": "打开后输入“方案 *.pdf”，用自己的项目关键词替换“方案”，试着找回一份已知文件。",
+      "pricing": "免费软件（Freeware）；桌面客户端免费。",
+      "privacy": "文件/文件夹名缓存、运行历史在本机；搜索历史可配置。名称本身可能含敏感信息，按需排除私人目录，不启用 HTTP/FTP/ETP 共享服务。",
+      "url": "https://www.voidtools.com/",
+      "sources": [
+        {
+          "title": "Everything 官方 FAQ",
+          "url": "https://www.voidtools.com/faq/"
+        },
+        {
+          "title": "Everything 官方隐私说明",
+          "url": "https://www.voidtools.com/en-us/privacy/"
+        },
+        {
+          "title": "Everything 官方选项说明",
+          "url": "https://www.voidtools.com/support/everything/options/"
+        },
+        {
+          "title": "Everything 官方下载页",
+          "url": "https://www.voidtools.com/downloads/"
+        }
+      ],
+      "endorsement": "not-rated",
+      "installation": "observed",
+      "evidence_label": "已在本机发现，待评价",
+      "evidence_note": "本机检测不代表个人认可。",
+      "checked_on": "2026-10-18"
+    },
+    {
+      "id": "powertoys",
+      "name": "Microsoft PowerToys",
+      "category": "windows",
+      "purpose": "把代码、预览和飞书放进固定分区；跨应用复制时清掉多余格式。先开两项就够。",
+      "scenario": "AI coding 时并排看编辑器与浏览器；把网页/飞书文字粘到提示词或文档时减少格式清理。",
+      "first_step": "先只启用 FancyZones，在设置里选两栏布局，再按住 Shift 拖窗口进分区。",
+      "pricing": "免费开源；可选在线 AI 提供方的模型调用可能另收费。",
+      "privacy": "非 AI 粘贴动作本地运行；Paste with AI 为可选功能，在线提供方可能收到剪贴板内容。先保持 AI 关闭，API key、密码不要用于在线变换，也不要保存成文本快捷键。",
+      "url": "https://learn.microsoft.com/en-us/windows/powertoys/",
+      "sources": [
+        {
+          "title": "PowerToys 官方概览",
+          "url": "https://learn.microsoft.com/en-us/windows/powertoys/"
+        },
+        {
+          "title": "PowerToys 安装要求",
+          "url": "https://learn.microsoft.com/en-us/windows/powertoys/install"
+        },
+        {
+          "title": "FancyZones 官方文档",
+          "url": "https://learn.microsoft.com/en-us/windows/powertoys/fancyzones"
+        },
+        {
+          "title": "Advanced Paste 官方文档",
+          "url": "https://learn.microsoft.com/en-us/windows/powertoys/advanced-paste"
+        },
+        {
+          "title": "Keyboard Manager 官方文档",
+          "url": "https://learn.microsoft.com/en-us/windows/powertoys/keyboard-manager"
+        },
+        {
+          "title": "PowerToys 许可证",
+          "url": "https://github.com/microsoft/PowerToys/blob/main/LICENSE"
+        }
+      ],
+      "endorsement": "candidate",
+      "installation": "unknown",
+      "evidence_label": "待试用",
+      "evidence_note": "官方资料核查与编辑选题，未取得用户试用评价。",
+      "checked_on": "2026-10-18"
+    },
+    {
+      "id": "localsend",
+      "name": "LocalSend",
+      "category": "files",
+      "purpose": "同一局域网里传图片、PDF、视频和文字。适合把手机素材送进 Windows，再继续设计或写代码。",
+      "scenario": "当手机、另一台电脑之间经常传素材时优先试；如果几乎不跨设备，优先级可降到 SumatraPDF 之后。",
+      "first_step": "两端打开 LocalSend 并接入同一可信局域网，先向自己的另一台设备传一张普通测试图。",
+      "pricing": "免费开源，无需账号；官方项目接受捐赠。",
+      "privacy": "通过局域网和 HTTPS 直接传输，不经第三方中转服务器。发送前核对设备名与接收端；同网不等于可信，不对陌生设备自动接收。",
+      "url": "https://localsend.org/",
+      "sources": [
+        {
+          "title": "LocalSend 官网",
+          "url": "https://localsend.org/"
+        },
+        {
+          "title": "LocalSend 官方项目",
+          "url": "https://github.com/localsend/localsend"
+        },
+        {
+          "title": "LocalSend 隐私政策",
+          "url": "https://localsend.org/privacy"
+        }
+      ],
+      "endorsement": "candidate",
+      "installation": "unknown",
+      "evidence_label": "待试用",
+      "evidence_note": "官方资料核查与编辑选题，未取得用户试用评价。",
+      "checked_on": "2026-10-18"
+    },
+    {
+      "id": "sumatrapdf",
+      "name": "SumatraPDF",
+      "category": "reading",
+      "purpose": "轻量打开 PDF、EPUB 等资料。适合快速看设计稿导出、技术手册和飞书附件。",
+      "scenario": "阅读导出的设计稿、说明书和长 PDF 时可试；如果现有浏览器阅读已顺手，收益较小。",
+      "first_step": "先用便携版打开一份常读 PDF，试 Ctrl+F 搜索，确认顺手后再考虑设为默认阅读器。",
+      "pricing": "免费开源，无订阅、无捆绑软件。",
+      "privacy": "普通本地阅读不上传文档；会保留本机最近记录，并有更新检查和崩溃上报，崩溃转储可能含文档片段。可选 AI 对话、翻译/搜索会向所选服务发送问题或文本；敏感文件避免调用。",
+      "url": "https://www.sumatrapdfreader.org/",
+      "sources": [
+        {
+          "title": "SumatraPDF 官方介绍",
+          "url": "https://www.sumatrapdfreader.org/free-pdf-reader"
+        },
+        {
+          "title": "SumatraPDF 官方下载",
+          "url": "https://www.sumatrapdfreader.org/download-free-pdf-viewer"
+        },
+        {
+          "title": "SumatraPDF 隐私政策",
+          "url": "https://www.sumatrapdfreader.org/docs/Privacy-policy"
+        }
+      ],
+      "endorsement": "candidate",
+      "installation": "unknown",
+      "evidence_label": "待试用",
+      "evidence_note": "官方资料核查与编辑选题，未取得用户试用评价。",
+      "checked_on": "2026-10-18"
+    },
+    {
+      "id": "listary",
+      "name": "Listary",
+      "category": "files",
+      "purpose": "在打开、保存和上传对话框里快速跳转项目文件夹。经常找素材路径时，价值比多装一个启动器更明确。",
+      "scenario": "给 AI 上传本地文件、给飞书附文件、在设计软件保存导出时，少重复逐层点目录。需在用户实际应用中试兼容性。",
+      "first_step": "先在资源管理器打开一个项目目录，再打开应用的文件对话框，试 Quick Switch；也可点建议目录或用 Ctrl+G。",
+      "pricing": "个人用途免费；工作/商业使用需 Pro。官网 Pro 标价 19.95 美元一次付费，终身更新；实际税费与结账价以页面为准。",
+      "privacy": "会建立文件索引并提供历史目录建议；官网隐私政策列出 Sentry、RudderStack 等第三方服务及错误日志收集，不能写成“完全离线、零遥测”。先检查索引目录和隐私选项。",
+      "url": "https://www.listary.com/",
+      "sources": [
+        {
+          "title": "Listary 官方下载",
+          "url": "https://www.listary.com/download"
+        },
+        {
+          "title": "Listary Quick Switch 文档",
+          "url": "https://help.listary.com/quick-switch"
+        },
+        {
+          "title": "Listary 官方价格",
+          "url": "https://www.listary.com/pro"
+        },
+        {
+          "title": "Listary 许可协议",
+          "url": "https://help.listary.com/license-agreement"
+        },
+        {
+          "title": "Listary 隐私政策",
+          "url": "https://help.listary.com/privacy"
+        }
+      ],
+      "endorsement": "candidate",
+      "installation": "unknown",
+      "evidence_label": "待试用",
+      "evidence_note": "官方资料核查与编辑选题，未取得用户试用评价。",
+      "checked_on": "2026-10-18"
+    },
+    {
+      "id": "ditto",
+      "name": "Ditto",
+      "category": "clipboard",
+      "purpose": "回找复制过的文本、提示词、代码片段和图片。先看 PixPin 的历史功能是否已经满足需求。",
+      "scenario": "多处复制提示词、错误日志与代码时，避免新复制把旧内容挤掉；只有现有剪贴板历史不够用时才增加它。",
+      "first_step": "先复制两段普通测试文字，用默认 Ctrl+反引号打开历史，选一条回车粘贴，再设置合理保存量和过期时间。",
+      "pricing": "免费开源。",
+      "privacy": "历史存入本地数据库。密码、令牌、API key、客户资料可能随复制长期留下；优先自动填充，设置排除和保存期限。自动过期并非即时，置顶/分组等有例外，不是密码保险箱。",
+      "url": "https://ditto-cp.sourceforge.io/",
+      "sources": [
+        {
+          "title": "Ditto 官网与基础操作",
+          "url": "https://ditto-cp.sourceforge.io/"
+        },
+        {
+          "title": "Ditto 官方源码与许可证",
+          "url": "https://github.com/sabrogden/Ditto"
+        },
+        {
+          "title": "Ditto 隐私说明",
+          "url": "https://ditto-cp.sourceforge.io/PrivacyPolicy.php"
+        },
+        {
+          "title": "Ditto 官方排除规则文档",
+          "url": "https://github.com/sabrogden/Ditto/wiki/Excluding-clip-from-saving"
+        },
+        {
+          "title": "Ditto 官方自动删除说明",
+          "url": "https://github.com/sabrogden/Ditto/wiki/Auto-Delete"
+        }
+      ],
+      "endorsement": "candidate",
+      "installation": "unknown",
+      "evidence_label": "待试用",
+      "evidence_note": "官方资料核查与编辑选题，未取得用户试用评价。",
+      "checked_on": "2026-10-18"
+    },
+    {
+      "id": "7zip",
+      "name": "7-Zip",
+      "category": "files",
+      "purpose": "打开和整理 ZIP、7z 等压缩包；给项目交付做打包、分卷或加密时，可作为现有基础工具。",
+      "scenario": "解压设计素材、检查源码压缩包、整理交付文件，补齐工具箱里的文件打包环节。",
+      "first_step": "右键一份可信测试压缩包，选择解压到独立文件夹，先查看内容再打开文件。",
+      "pricing": "免费、开源，个人与商业组织均可使用，无需注册或付费。",
+      "privacy": "加密压缩包能帮助保护文件，但不能保证接收端安全；来源不明的压缩包不要直接运行其中脚本/程序。",
+      "url": "https://www.7-zip.org/",
+      "sources": [
+        {
+          "title": "7-Zip 官网",
+          "url": "https://www.7-zip.org/"
+        },
+        {
+          "title": "7-Zip 官方许可证",
+          "url": "https://www.7-zip.org/license.txt"
+        }
+      ],
+      "endorsement": "not-rated",
+      "installation": "observed",
+      "evidence_label": "已收录，尚未评价",
+      "evidence_note": "用户同意收录，不扩写个人使用评价。",
+      "checked_on": "2026-10-18"
+    },
+    {
+      "id": "manictime",
+      "name": "ManicTime",
+      "category": "reading",
+      "purpose": "本人确认有用。用应用时间线回顾写代码、查资料与设计的时间分布；截图和更细的内容记录仍应按需开启。",
+      "scenario": "适合回顾碎片化工作和项目耗时；时间线是帮助回忆的线索，不能直接把在线时长当成产出。",
+      "first_step": "先检查当前 Tracking 与 Screenshots 设置；建议从应用级统计、关闭截图开始，按需再决定窗口标题和文档记录。",
+      "pricing": "专有软件；Windows 有免费版，Pro 授权和 Cloud 订阅付费。各版本提供试用。",
+      "privacy": "可记录应用名、URL、窗口标题、时间和部分文档路径；截图另有独立开关。关窗口标题不会同时关截图。先排除私密应用/内容，并确认云同步或服务器连接范围；",
+      "url": "https://www.manictime.com/",
+      "sources": [
+        {
+          "title": "ManicTime 免费与付费功能说明",
+          "url": "https://docs.manictime.com/win-client/faq/license-only-features"
+        },
+        {
+          "title": "ManicTime 本地许可",
+          "url": "https://www.manictime.com/pricing/license?type=personal"
+        },
+        {
+          "title": "ManicTime 云订阅",
+          "url": "https://www.manictime.com/pricing"
+        },
+        {
+          "title": "ManicTime 官方追踪设置",
+          "url": "https://docs.manictime.com/win-client/settings/tracking"
+        },
+        {
+          "title": "ManicTime 隐私政策",
+          "url": "https://login.manictime.com/privacypolicy"
+        },
+        {
+          "title": "ManicTime 无云使用说明",
+          "url": "https://www.manictime.com/try-without-cloud"
+        }
+      ],
+      "endorsement": "recommended",
+      "installation": "observed",
+      "evidence_label": "用户实用推荐",
+      "evidence_note": "用户明确确认有用；不把在线时长等同于产出。",
+      "checked_on": "2026-10-18"
+    }
+  ],
+  "disclosure": "推荐依据与安装状态分开记录；收藏、检测到运行或安装都不等于用户推荐。收费与平台支持以来源日期及官方说明为准。"
+}

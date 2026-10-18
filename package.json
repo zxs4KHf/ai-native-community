@@ -1,0 +1,13 @@
+{
+  "name": "ai-native-community",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "description": "AI native 社区 · 奥特大出生",
+  "engines": {"node": ">=24"},
+  "scripts": {
+    "build": "node tools/build.mjs",
+    "start": "node tools/local-server.mjs",
+    "check": "node tools/check.mjs"
+  }
+}

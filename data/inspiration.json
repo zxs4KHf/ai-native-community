@@ -1,0 +1,261 @@
+{
+  "prepared_on": "2026-10-18",
+  "video_source": {
+    "title": "提升审美与效率！设计师必逛的灵感网站",
+    "author": "Rofix",
+    "url": "https://www.bilibili.com/video/BV1wZYY6EErY/",
+    "duration_seconds": 350
+  },
+  "source_limits": "依据正常播放的关键画面与烧录字幕整理，约每5秒采样，时间边界约±2秒；未取得完整音轨或可搜索字幕。作者评价为简短转述，不是逐字引文；官网用途另列。",
+  "taxonomy": [
+    {
+      "id": "motion",
+      "label": "动效交互"
+    },
+    {
+      "id": "navigation",
+      "label": "导航组件"
+    },
+    {
+      "id": "logo",
+      "label": "品牌标志"
+    },
+    {
+      "id": "brand",
+      "label": "品牌规范"
+    },
+    {
+      "id": "presentation",
+      "label": "演示排版"
+    },
+    {
+      "id": "web",
+      "label": "网页整体"
+    },
+    {
+      "id": "hero",
+      "label": "首屏"
+    },
+    {
+      "id": "texture",
+      "label": "配色纹理"
+    },
+    {
+      "id": "social",
+      "label": "社媒素材"
+    },
+    {
+      "id": "fonts",
+      "label": "字体资源"
+    }
+  ],
+  "entries": [
+    {
+      "id": "60fps",
+      "categories": [
+        "motion"
+      ],
+      "video_timestamp": "00:18",
+      "video_url": "https://www.bilibili.com/video/BV1wZYY6EErY/?t=18",
+      "author_evaluation": "UI动效参考",
+      "availability": "available",
+      "verification_note": "已核对公开官网用途；未验证服务效果、授权适用性或购买权益。"
+    },
+    {
+      "id": "navbar-gallery",
+      "categories": [
+        "navigation"
+      ],
+      "video_timestamp": "00:25",
+      "video_url": "https://www.bilibili.com/video/BV1wZYY6EErY/?t=25",
+      "author_evaluation": "侧栏设计参考",
+      "availability": "available",
+      "verification_note": "已核对公开官网用途；未验证服务效果、授权适用性或购买权益。"
+    },
+    {
+      "id": "logobook",
+      "categories": [
+        "logo"
+      ],
+      "video_timestamp": "00:39",
+      "video_url": "https://www.bilibili.com/video/BV1wZYY6EErY/?t=39",
+      "author_evaluation": "可保存标志",
+      "availability": "available",
+      "verification_note": "已核对公开官网用途；未验证服务效果、授权适用性或购买权益。"
+    },
+    {
+      "id": "component-gallery",
+      "categories": [
+        "navigation",
+        "brand"
+      ],
+      "video_timestamp": "00:50",
+      "video_url": "https://www.bilibili.com/video/BV1wZYY6EErY/?t=50",
+      "author_evaluation": "可横向比对组件",
+      "availability": "available",
+      "verification_note": "已核对公开官网用途；未验证服务效果、授权适用性或购买权益。"
+    },
+    {
+      "id": "deck-gallery",
+      "categories": [
+        "presentation"
+      ],
+      "video_timestamp": "01:16",
+      "video_url": "https://www.bilibili.com/video/BV1wZYY6EErY/?t=76",
+      "author_evaluation": "PPT灵感充足",
+      "availability": "available",
+      "verification_note": "已核对公开官网用途；未验证服务效果、授权适用性或购买权益。"
+    },
+    {
+      "id": "visual-journal",
+      "categories": [
+        "brand"
+      ],
+      "video_timestamp": "01:44",
+      "video_url": "https://www.bilibili.com/video/BV1wZYY6EErY/?t=104",
+      "author_evaluation": "有助提升审美",
+      "availability": "available",
+      "verification_note": "已核对公开官网用途；未验证服务效果、授权适用性或购买权益。"
+    },
+    {
+      "id": "rebrand-gallery",
+      "categories": [
+        "brand",
+        "logo"
+      ],
+      "video_timestamp": "01:51",
+      "video_url": "https://www.bilibili.com/video/BV1wZYY6EErY/?t=111",
+      "author_evaluation": "品牌重塑案例",
+      "availability": "available",
+      "verification_note": "已核对公开官网用途；未验证服务效果、授权适用性或购买权益。"
+    },
+    {
+      "id": "brandguidelines",
+      "categories": [
+        "brand"
+      ],
+      "video_timestamp": "01:59",
+      "video_url": "https://www.bilibili.com/video/BV1wZYY6EErY/?t=119",
+      "author_evaluation": "品牌规范难得",
+      "availability": "available",
+      "verification_note": "已核对公开官网用途；未验证服务效果、授权适用性或购买权益。"
+    },
+    {
+      "id": "minimal-gallery",
+      "categories": [
+        "web"
+      ],
+      "video_timestamp": "02:26",
+      "video_url": "https://www.bilibili.com/video/BV1wZYY6EErY/?t=146",
+      "author_evaluation": "值得推荐",
+      "availability": "available",
+      "verification_note": "已核对公开官网用途；未验证服务效果、授权适用性或购买权益。"
+    },
+    {
+      "id": "desengs-minimum",
+      "categories": [
+        "web"
+      ],
+      "video_timestamp": "02:40",
+      "video_url": "https://www.bilibili.com/video/BV1wZYY6EErY/?t=160",
+      "author_evaluation": "极简网站参考",
+      "availability": "available",
+      "verification_note": "已核对公开官网用途；未验证服务效果、授权适用性或购买权益。"
+    },
+    {
+      "id": "a1-gallery",
+      "categories": [
+        "web",
+        "presentation"
+      ],
+      "video_timestamp": "03:10",
+      "video_url": "https://www.bilibili.com/video/BV1wZYY6EErY/?t=190",
+      "author_evaluation": "酷站排版参考",
+      "availability": "available",
+      "verification_note": "已核对公开官网用途；未验证服务效果、授权适用性或购买权益。"
+    },
+    {
+      "id": "recent-design",
+      "categories": [
+        "web",
+        "motion",
+        "brand"
+      ],
+      "video_timestamp": "03:23",
+      "video_url": "https://www.bilibili.com/video/BV1wZYY6EErY/?t=203",
+      "author_evaluation": "X精选好用",
+      "availability": "available",
+      "verification_note": "已核对公开官网用途；未验证服务效果、授权适用性或购买权益。"
+    },
+    {
+      "id": "one-page-love",
+      "categories": [
+        "web",
+        "hero"
+      ],
+      "video_timestamp": "03:41",
+      "video_url": "https://www.bilibili.com/video/BV1wZYY6EErY/?t=221",
+      "author_evaluation": "单页灵感参考",
+      "availability": "available",
+      "verification_note": "已核对公开官网用途；未验证服务效果、授权适用性或购买权益。"
+    },
+    {
+      "id": "see-saw",
+      "categories": [
+        "web",
+        "motion"
+      ],
+      "video_timestamp": "03:48",
+      "video_url": "https://www.bilibili.com/video/BV1wZYY6EErY/?t=228",
+      "author_evaluation": "可看动态效果",
+      "availability": "available",
+      "verification_note": "已核对公开官网用途；未验证服务效果、授权适用性或购买权益。"
+    },
+    {
+      "id": "supahero",
+      "categories": [
+        "hero"
+      ],
+      "video_timestamp": "03:59",
+      "video_url": "https://www.bilibili.com/video/BV1wZYY6EErY/?t=239",
+      "author_evaluation": "品味很好",
+      "availability": "available",
+      "verification_note": "已核对公开官网用途；未验证服务效果、授权适用性或购买权益。 原域仍提供图库，页面注明现属 screensdesign.com。"
+    },
+    {
+      "id": "grainient",
+      "categories": [
+        "texture"
+      ],
+      "video_timestamp": "04:11",
+      "video_url": "https://www.bilibili.com/video/BV1wZYY6EErY/?t=251",
+      "author_evaluation": "渐变好看",
+      "availability": "available",
+      "verification_note": "已核对公开官网用途；未验证服务效果、授权适用性或购买权益。"
+    },
+    {
+      "id": "posts-design",
+      "categories": [
+        "social"
+      ],
+      "video_timestamp": "04:21",
+      "video_url": "https://www.bilibili.com/video/BV1wZYY6EErY/?t=261",
+      "author_evaluation": "高端广告合集",
+      "availability": "available",
+      "verification_note": "已核对公开官网用途；未验证服务效果、授权适用性或购买权益。"
+    },
+    {
+      "id": "youworkforthem",
+      "categories": [
+        "fonts",
+        "texture"
+      ],
+      "video_timestamp": "04:40",
+      "video_url": "https://www.bilibili.com/video/BV1wZYY6EErY/?t=280",
+      "author_evaluation": "素材吸引人",
+      "availability": "partial_homepage_403",
+      "verification_note": "首页访问受限（403），部分官方产品页可读。"
+    }
+  ],
+  "incidental_note": "Gavin Nelson个人作品集是片中点开的案例，SteamDB为查询游戏人数的插话，均不计入18个主站。"
+}
