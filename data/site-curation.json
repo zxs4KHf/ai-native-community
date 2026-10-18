@@ -1,0 +1,28 @@
+{
+  "checked_on": "2026-10-18",
+  "frequent": [
+    "chatgpt",
+    "claude",
+    "net-coffee",
+    "modeltrace",
+    "gemini",
+    "workbuddy"
+  ],
+  "in_use": [
+    "chatgpt",
+    "claude",
+    "net-coffee",
+    "gemini",
+    "workbuddy",
+    "qoder",
+    "cockpit-tools",
+    "antigravity",
+    "google-ai-studio",
+    "modeltrace"
+  ],
+  "recommended": [
+    "cockpit-tools",
+    "modeltrace"
+  ],
+  "disclosure": "常用、在用与站长推荐来自站长本人确认，表示使用习惯或个人评价，不代表效果、安全性或模型身份保证。WorkBuddy 国内与海外按同一产品收录，入口分别标明。"
+}

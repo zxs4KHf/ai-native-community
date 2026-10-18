@@ -10,17 +10,17 @@
     {
       "id": "research",
       "label": "搜索研究",
-      "count": 7
+      "count": 6
     },
     {
       "id": "coding",
       "label": "编程 Agent",
-      "count": 7
+      "count": 8
     },
     {
       "id": "api",
       "label": "API 与中转",
-      "count": 18
+      "count": 19
     },
     {
       "id": "media",
@@ -149,28 +149,6 @@
       "caution": null
     },
     {
-      "id": "copilot",
-      "name": "Microsoft Copilot",
-      "identity": "官方产品",
-      "category": "conversation",
-      "tags": [
-        "微软",
-        "助手"
-      ],
-      "purpose": "微软的 AI 对话助手入口。",
-      "url": "https://copilot.com/",
-      "topics": [
-        "tools"
-      ],
-      "verification": {
-        "status": "已核验用途",
-        "checked_on": "2026-10-18",
-        "source_url": "https://copilot.com/"
-      },
-      "referral": null,
-      "caution": null
-    },
-    {
       "id": "arena",
       "name": "Arena",
       "identity": "第三方评测与聚合",
@@ -189,29 +167,6 @@
         "status": "已核验用途",
         "checked_on": "2026-10-18",
         "source_url": "https://arena.ai/"
-      },
-      "referral": null,
-      "caution": null
-    },
-    {
-      "id": "aibijia",
-      "name": "Aibijia",
-      "identity": "第三方信息聚合",
-      "category": "research",
-      "tags": [
-        "订阅比较",
-        "渠道信息"
-      ],
-      "purpose": "汇集 AI 订阅方案和渠道信息，便于回到原站核对。",
-      "url": "https://aibijia.org/",
-      "topics": [
-        "subscription",
-        "api-cost"
-      ],
-      "verification": {
-        "status": "已核验用途",
-        "checked_on": "2026-10-18",
-        "source_url": "https://aibijia.org/"
       },
       "referral": null,
       "caution": null
@@ -261,29 +216,6 @@
       },
       "referral": null,
       "caution": null
-    },
-    {
-      "id": "ztest",
-      "name": "真测 Ztest",
-      "identity": "第三方核验工具",
-      "category": "research",
-      "tags": [
-        "模型核验",
-        "中转评测"
-      ],
-      "purpose": "查看中转模型探测和服务可用性报告。",
-      "url": "https://ztest.ai/",
-      "topics": [
-        "api-cost",
-        "tools"
-      ],
-      "verification": {
-        "status": "已核验用途",
-        "checked_on": "2026-10-18",
-        "source_url": "https://ztest.ai/"
-      },
-      "referral": null,
-      "caution": "行为探针仅能辅助比较，不能证明模型真实身份。请勿提交生产 API 密钥或敏感数据。"
     },
     {
       "id": "realmodel",
@@ -419,52 +351,6 @@
         "status": "已核验用途",
         "checked_on": "2026-10-18",
         "source_url": "https://zcode.z.ai/en"
-      },
-      "referral": null,
-      "caution": null
-    },
-    {
-      "id": "codex-router",
-      "name": "Codex Router",
-      "identity": "社区开源工具",
-      "category": "coding",
-      "tags": [
-        "本地代理",
-        "模型路由",
-        "Codex"
-      ],
-      "purpose": "为 Codex App 和 CLI 接入其他模型提供本地路由。",
-      "url": "https://codex-router.com/",
-      "topics": [
-        "agent"
-      ],
-      "verification": {
-        "status": "已核验用途",
-        "checked_on": "2026-10-18",
-        "source_url": "https://codex-router.com/"
-      },
-      "referral": null,
-      "caution": null
-    },
-    {
-      "id": "shuncode",
-      "name": "ShunCode AI",
-      "identity": "第三方软件",
-      "category": "coding",
-      "tags": [
-        "编辑器",
-        "MCP",
-        "本地项目"
-      ],
-      "purpose": "通过编辑器和 MCP 连接网页 AI，读写本地项目。",
-      "url": "https://shuncode.top/",
-      "topics": [
-        "agent"
-      ],
-      "verification": {
-        "status": "已核验用途",
-        "checked_on": "2026-10-18",
-        "source_url": "https://shuncode.top/"
       },
       "referral": null,
       "caution": null
@@ -1241,7 +1127,7 @@
     },
     {
       "id": "workbuddy",
-      "name": "WorkBuddy",
+      "name": "WorkBuddy（国内 / 海外）",
       "identity": "官方产品",
       "category": "office",
       "tags": [
@@ -1249,21 +1135,34 @@
         "文档",
         "调研",
         "工具调用",
-        "腾讯"
+        "腾讯",
+        "国内版",
+        "海外版",
+        "WorkBuddy AI"
       ],
-      "purpose": "自主规划办公任务、调用工具、调研并生成可审核的文件成果。",
+      "purpose": "自主规划办公任务、调用工具、调研并生成可审核的文件成果；国内与海外分别提供入口。",
       "url": "https://www.workbuddy.cn/",
       "topics": [
         "tools",
         "agent"
       ],
       "verification": {
-        "status": "已核验用途",
+        "status": "已核验用途与官方地区入口",
         "checked_on": "2026-10-18",
-        "source_url": "https://www.workbuddy.cn/"
+        "source_url": "https://www.workbuddy.cn/announcement/"
       },
       "referral": null,
-      "caution": null
+      "caution": "国内与海外的账号、可用功能和订阅规则请分别核对；不默认互通，也不承诺免费额度。",
+      "regional_urls": [
+        {
+          "label": "国内版",
+          "url": "https://www.workbuddy.cn/"
+        },
+        {
+          "label": "海外版 · WorkBuddy AI",
+          "url": "https://www.workbuddy.ai/"
+        }
+      ]
     },
     {
       "id": "codebuddy",
@@ -1703,6 +1602,155 @@
       },
       "referral": null,
       "caution": "首页访问受限（403），部分官方产品页可读。"
+    },
+    {
+      "id": "qoder",
+      "name": "Qoder",
+      "identity": "官方产品",
+      "category": "coding",
+      "tags": [
+        "AI IDE",
+        "编程 Agent",
+        "代码库",
+        "CLI"
+      ],
+      "purpose": "通过 IDE 与编程 Agent 理解代码库、实现修改并检查开发任务。",
+      "url": "https://qoder.com/",
+      "topics": [
+        "agent"
+      ],
+      "verification": {
+        "status": "已核验公开用途",
+        "checked_on": "2026-10-18",
+        "source_url": "https://docs.qoder.com/"
+      },
+      "referral": null,
+      "caution": null
+    },
+    {
+      "id": "cockpit-tools",
+      "name": "Cockpit Tools",
+      "identity": "社区开源工具",
+      "category": "coding",
+      "tags": [
+        "AI IDE",
+        "账号管理",
+        "配额监控",
+        "Antigravity",
+        "Codex"
+      ],
+      "purpose": "集中管理 AI IDE 账号、切换账号并查看配额；它是辅助管理工具，不提供独立编程模型。",
+      "url": "https://github.com/jlcodes99/cockpit-tools",
+      "topics": [
+        "agent",
+        "subscription"
+      ],
+      "verification": {
+        "status": "已核验公开用途",
+        "checked_on": "2026-10-18",
+        "source_url": "https://github.com/jlcodes99/cockpit-tools"
+      },
+      "referral": null,
+      "caution": "涉及账号授权与本地凭据管理，请先审阅项目说明和权限。不要上传密钥、令牌、账号导出或敏感配置；使用须遵守对应平台规则。"
+    },
+    {
+      "id": "antigravity",
+      "name": "Google Antigravity",
+      "identity": "官方产品",
+      "category": "coding",
+      "tags": [
+        "AI IDE",
+        "编程 Agent",
+        "Google",
+        "工作区"
+      ],
+      "purpose": "Google 的 Agent 开发平台，通过 IDE 等入口组织编程任务并审核产物。",
+      "url": "https://antigravity.google/",
+      "topics": [
+        "agent"
+      ],
+      "verification": {
+        "status": "已核验公开用途",
+        "checked_on": "2026-10-18",
+        "source_url": "https://antigravity.google/"
+      },
+      "referral": null,
+      "caution": null
+    },
+    {
+      "id": "google-ai-studio",
+      "name": "Google AI Studio",
+      "identity": "厂商官方模型平台",
+      "category": "api",
+      "tags": [
+        "Gemini API",
+        "提示词",
+        "原型",
+        "开发者"
+      ],
+      "purpose": "面向开发者试验 Gemini 模型、调试提示词并构建应用原型；与 Gemini 对话应用分开使用。",
+      "url": "https://aistudio.google.com/",
+      "topics": [
+        "tools",
+        "api-cost"
+      ],
+      "verification": {
+        "status": "已核验公开用途",
+        "checked_on": "2026-10-18",
+        "source_url": "https://ai.google.dev/aistudio"
+      },
+      "referral": null,
+      "caution": "使用资格、配额、数据条款与计费按 AI Studio / Gemini API 当前规则核对，不等同于 Gemini 应用订阅权益。"
+    },
+    {
+      "id": "gemini",
+      "name": "Gemini",
+      "identity": "官方产品",
+      "category": "conversation",
+      "tags": [
+        "Google",
+        "对话",
+        "写作",
+        "多模态"
+      ],
+      "purpose": "Google 的日常 AI 对话应用，用于问答、写作与多模态任务；开发调试请看 Google AI Studio。",
+      "url": "https://gemini.google.com/",
+      "topics": [
+        "tools"
+      ],
+      "verification": {
+        "status": "已核验公开用途",
+        "checked_on": "2026-10-18",
+        "source_url": "https://gemini.google.com/"
+      },
+      "referral": null,
+      "caution": null
+    },
+    {
+      "id": "modeltrace",
+      "name": "ModelTrace",
+      "identity": "社区开源核验工具",
+      "category": "research",
+      "tags": [
+        "模型检测",
+        "模型指纹",
+        "ModelTRECE",
+        "数字挑战",
+        "手动比对"
+      ],
+      "purpose": "通过三次长整数挑战与模型指纹库比对，辅助观察模型行为特征。",
+      "url": "https://xqy2006.github.io/ModelTrace/",
+      "topics": [
+        "tools",
+        "api-cost"
+      ],
+      "verification": {
+        "status": "已核验公开用途",
+        "checked_on": "2026-10-18",
+        "source_url": "https://github.com/xqy2006/ModelTrace"
+      },
+      "referral": null,
+      "caution": "检测结果供参考，不等同官方模型身份认证；库外模型也可能匹配到最相似结果。请勿提交生产 API 密钥或敏感数据。"
     }
   ]
 }
