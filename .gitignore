@@ -1,0 +1,16 @@
+.local/
+backups/
+evidence/
+research-input/
+node_modules/
+deployment.json
+wrangler.jsonc
+.env
+.env.*
+*.log
+*.pyc
+__pycache__/
+.DS_Store
+Thumbs.db
+credentials*
+auth*
