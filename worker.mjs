@@ -14,7 +14,7 @@ export default {
     if (!url.pathname.startsWith(PREFIX)) return new Response('Not found', {status:404, headers:securityHeaders});
     if (!['GET','HEAD'].includes(request.method)) return new Response('Method not allowed', {status:405, headers:{...securityHeaders,Allow:'GET, HEAD'}});
     const pathname=url.pathname.slice(PREFIX.length);
-    const pages=['tools','design','guides','start','community','toolbox','workshop','videos'];
+    const pages=['tools','design','guides','start','community','toolbox','workshop','videos','feedback'];
     if(pages.includes(pathname)) { url.pathname+='/'; return Response.redirect(url.href,308); }
     const name = !pathname ? 'index.html' : pathname.endsWith('/') ? pathname+'index.html' : pathname;
     const asset = Object.hasOwn(assets, name) ? assets[name] : null;

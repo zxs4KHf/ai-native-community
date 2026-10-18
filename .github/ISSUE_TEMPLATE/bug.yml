@@ -1,0 +1,68 @@
+{
+  "name": "Bug 报告",
+  "description": "提供复现步骤、预期与实际结果。",
+  "title": "[Bug] ",
+  "body": [
+    {
+      "type": "markdown",
+      "attributes": {
+        "value": "反馈会公开显示在本仓库 Issues。请先[搜索已有反馈](https://github.com/zxs4KHf/ai-native-community/issues?q=is%3Aissue)，不要提交个人信息、账号、密钥、未脱敏日志或截图。安全漏洞请勿公开发 Issue，参见[私密报告说明](https://github.com/zxs4KHf/ai-native-community/security/policy)。登录 GitHub 后，检查内容并自行点击提交。"
+      }
+    },
+    {
+      "type": "input",
+      "id": "page",
+      "attributes": {
+        "label": "所在页面（可选）",
+        "description": "仅保留本站页面路径；请勿粘贴带密钥或私人参数的链接。"
+      },
+      "validations": {
+        "required": false
+      }
+    },
+    {
+      "type": "textarea",
+      "id": "steps",
+      "attributes": {
+        "label": "复现步骤",
+        "placeholder": "1. 打开……\n2. 点击……\n3. 出现……"
+      },
+      "validations": {
+        "required": true
+      }
+    },
+    {
+      "type": "textarea",
+      "id": "result",
+      "attributes": {
+        "label": "预期与实际结果",
+        "placeholder": "预期：……\n实际：……"
+      },
+      "validations": {
+        "required": true
+      }
+    },
+    {
+      "type": "input",
+      "id": "environment",
+      "attributes": {
+        "label": "设备 / 浏览器（可选）",
+        "description": "按需填写即可，不需要账号或设备标识。"
+      },
+      "validations": {
+        "required": false
+      }
+    },
+    {
+      "type": "textarea",
+      "id": "screenshots",
+      "attributes": {
+        "label": "截图 / 补充说明（可选）",
+        "description": "可粘贴截图或拖入附件；上传前遮住账号、密钥、私人内容与敏感地址。"
+      },
+      "validations": {
+        "required": false
+      }
+    }
+  ]
+}

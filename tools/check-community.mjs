@@ -4,8 +4,8 @@ import {resolve} from 'node:path';
 import worker from '../worker.mjs';
 import {assets} from '../assets.mjs';
 const root=resolve(import.meta.dirname,'..');
-const pages=['','tools/','design/','guides/','start/','community/','toolbox/','workshop/','videos/'];
-const expected=pages.map(p=>p+'index.html').concat(['style.css','app.js','icon.svg']).sort();
+const pages=['','tools/','design/','guides/','start/','community/','toolbox/','workshop/','videos/','feedback/'];
+const expected=pages.map(p=>p+'index.html').concat(['style.css','app.js','icon.svg','feedback.mjs']).sort();
 assert.deepEqual(Object.keys(assets).sort(),expected);
 async function list(path,prefix=''){let names=[];for(const item of await readdir(path,{withFileTypes:true})){if(item.isDirectory())names.push(...await list(resolve(path,item.name),prefix+item.name+'/'));else names.push(prefix+item.name);}return names;}
 assert.deepEqual((await list(resolve(root,'public'))).sort(),expected);
