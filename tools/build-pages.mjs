@@ -3,9 +3,10 @@ import {resolve,dirname} from 'node:path';
 import {FEEDBACK_TYPES,REPOSITORY,feedbackEntryURL,issueFormURL} from '../source/feedback.mjs';
 const root=resolve(import.meta.dirname,'..');
 const load=async name=>JSON.parse(await readFile(resolve(root,'data',name),'utf8'));
+const sourceText=async name=>(await readFile(resolve(root,'source',name),'utf8')).replace(/\r\n?/g,'\n');
 const [sites,guides,design,toolbox,start]=await Promise.all(['sites.json','guides.json','inspiration.json','toolbox.json','start-guide.json'].map(load));
 const esc=value=>String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const template=await readFile(resolve(root,'source/template.html'),'utf8');
+const template=await sourceText('template.html');
 function view(name){
  const marker=`<div class="view-panel" data-view="${name}">`;const start=template.indexOf(marker);if(start<0)throw Error('Missing source view '+name);
  const tags=/<\/?div\b[^>]*>/g;tags.lastIndex=start+marker.length;let depth=1,m;
@@ -76,7 +77,7 @@ function sidebar(slug){
 }
 const titles={home:'AI native 社区',tools:'网站导航',design:'设计灵感',guides:'实践资料',start:'第一次来',workshop:'提问工作台',videos:'视频导读',community:'一起共建',toolbox:'效率工具箱',feedback:'反馈与共建'};
 const assets={};
-await writeFile(resolve(root,'public/style.css'),await readFile(resolve(root,'source/community.css'),'utf8'));
+await writeFile(resolve(root,'public/style.css'),await sourceText('community.css'));
 for(const [slug,content] of Object.entries(pages)){
  const header=`<header class="site-header"><a class="brand" href="/ai-hub/" aria-label="AI native 社区，回到首页"><span class="brand-mark" aria-hidden="true">✳</span><span>AI native 社区<small>奥特大出生</small></span></a><nav aria-label="主导航">${nav.map(([s,l])=>`<a href="${s==='feedback'?feedbackEntryURL(slug):url(s)}"${s==='feedback'?' data-feedback-entry':''}${slug===s?' aria-current="page"':''}${s==='start'?' class="first-visit"':''}>${l}</a>`).join('')}</nav></header>`;
  const html=`<!doctype html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f7f5ef"><meta name="description" content="AI native 社区：连接工具、方法与共同实践。按任务导航到网站、设计灵感、公开资料和效率工具。"><title>${titles[slug]} · 奥特大出生</title><link rel="icon" href="/ai-hub/icon.svg" type="image/svg+xml"><link rel="stylesheet" href="/ai-hub/style.css"><script src="/ai-hub/app.js" defer></script><script type="module" src="/ai-hub/feedback.mjs"></script></head><body data-page="${slug}" class="page-${slug}"><a class="skip-link" href="#main">跳到主要内容</a>${header}<div class="directory-shell">${sidebar(slug)}<main id="main">${canonicalLinks(content,slug)}</main></div><footer class="site-footer"><a href="/ai-hub/">AI native 社区 · 奥特大出生</a><span>一起试，一起核对，一起做成。</span><a data-feedback-entry href="${feedbackEntryURL(slug)}">反馈与共建</a><a href="${url('community')}#sources">来源与边界 ↗</a></footer><a class="feedback-fab" data-feedback-entry href="${feedbackEntryURL(slug)}" aria-label="反馈与共建"><span aria-hidden="true">＋</span> 反馈与共建</a><div class="toast" id="toast" role="status" hidden></div></body></html>\n`;
@@ -85,9 +86,9 @@ for(const [slug,content] of Object.entries(pages)){
  assets[name]={type:'text/html; charset=utf-8',body:html};
 }
 const searchIndex=[...[...sites.entries].sort((a,b)=>frequentRank(a.id)-frequentRank(b.id)).map(s=>({type:designById.has(s.id)?'设计参考':'网站',title:s.name,summary:s.purpose,search:[s.name,s.url,...(s.regional_urls||[]).map(link=>link.url),s.purpose,...s.tags,...(curation.frequent.includes(s.id)?['常用']:[]),...(curation.in_use.includes(s.id)?['在用']:[]),...(curation.recommended.includes(s.id)?['站长推荐']:[])].join(' '),href:`${url(designById.has(s.id)?'design':'tools')}?site=${s.id}#sites`})),...guides.cards.map(c=>({type:'公开知识卡',title:c.title,summary:topics[c.topic],search:[c.title,...c.body].join(' '),href:`${url('guides')}?card=${c.id}#guides`})),...toolbox.entries.map(t=>({type:'效率工具',title:t.name,summary:t.purpose,search:[t.name,t.purpose,t.scenario,t.evidence_label].join(' '),href:`${url('toolbox')}?tool=${t.id}#toolbox`}))];
-const app=`const SEARCH_INDEX=${JSON.stringify(searchIndex)};\nconst LEGACY_ROUTES=${JSON.stringify(hashRoutes)};\n`+await readFile(resolve(root,'source/app.js'),'utf8');
+const app=`const SEARCH_INDEX=${JSON.stringify(searchIndex)};\nconst LEGACY_ROUTES=${JSON.stringify(hashRoutes)};\n`+await sourceText('app.js');
 await writeFile(resolve(root,'public/app.js'),app);
-await writeFile(resolve(root,'public/feedback.mjs'),await readFile(resolve(root,'source/feedback.mjs'),'utf8'));
+await writeFile(resolve(root,'public/feedback.mjs'),await sourceText('feedback.mjs'));
 for(const [name,type] of [['feedback.mjs','text/javascript; charset=utf-8'],['app.js','text/javascript; charset=utf-8'],['style.css','text/css; charset=utf-8'],['icon.svg','image/svg+xml; charset=utf-8']])assets[name]={type,body:await readFile(resolve(root,'public',name),'utf8')};
 await writeFile(resolve(root,'assets.mjs'),'// Generated from reviewed static community pages.\nexport const assets = '+JSON.stringify(assets)+';\n');
 await mkdir(resolve(root,'evidence'),{recursive:true});
