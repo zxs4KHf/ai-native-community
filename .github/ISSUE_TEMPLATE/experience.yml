@@ -1,0 +1,45 @@
+{
+  "name": "使用体验",
+  "description": "说说哪里顺手、哪里卡住，以及你期待的体验。",
+  "title": "[体验] ",
+  "body": [
+    {
+      "type": "markdown",
+      "attributes": {
+        "value": "反馈会公开显示在本仓库 Issues。请先[搜索已有反馈](https://github.com/zxs4KHf/ai-native-community/issues?q=is%3Aissue)，不要提交个人信息、账号、密钥、未脱敏日志或截图。安全漏洞请勿公开发 Issue，参见[私密报告说明](https://github.com/zxs4KHf/ai-native-community/security/policy)。登录 GitHub 后，检查内容并自行点击提交。"
+      }
+    },
+    {
+      "type": "input",
+      "id": "page",
+      "attributes": {
+        "label": "所在页面（可选）",
+        "description": "仅保留本站页面路径；请勿粘贴带密钥或私人参数的链接。"
+      },
+      "validations": {
+        "required": false
+      }
+    },
+    {
+      "type": "textarea",
+      "id": "experience",
+      "attributes": {
+        "label": "使用体验 / 遇到的问题",
+        "placeholder": "在哪一步顺手或卡住了？"
+      },
+      "validations": {
+        "required": true
+      }
+    },
+    {
+      "type": "textarea",
+      "id": "expectation",
+      "attributes": {
+        "label": "你期待怎样（可选）"
+      },
+      "validations": {
+        "required": false
+      }
+    }
+  ]
+}

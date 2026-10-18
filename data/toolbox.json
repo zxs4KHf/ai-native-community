@@ -41,8 +41,8 @@
       ],
       "endorsement": "recommended",
       "installation": "user-confirmed",
-      "evidence_label": "用户实用推荐",
-      "evidence_note": "用户在本轮明确表示已亲自试用且认为好用；不扩写使用历史。",
+      "evidence_label": "站长推荐",
+      "evidence_note": "站长试用推荐：截图贴屏后可直接选字。",
       "checked_on": "2026-10-18"
     },
     {
@@ -50,7 +50,7 @@
       "name": "Everything",
       "category": "files",
       "purpose": "快速按文件名找项目、截图、PDF 和下载文件。先补齐每天反复翻文件夹的这一环。",
-      "scenario": "适合从设计素材、AI coding 项目、飞书下载附件里找回已落盘的文件。场景适配为调研判断，不是用户实测结论。",
+      "scenario": "适合从设计素材、AI coding 项目、飞书下载附件里找回已落盘的文件，具体体验有待试用。",
       "first_step": "打开后输入“方案 *.pdf”，用自己的项目关键词替换“方案”，试着找回一份已知文件。",
       "pricing": "免费软件（Freeware）；桌面客户端免费。",
       "privacy": "文件/文件夹名缓存、运行历史在本机；搜索历史可配置。名称本身可能含敏感信息，按需排除私人目录，不启用 HTTP/FTP/ETP 共享服务。",
@@ -75,8 +75,8 @@
       ],
       "endorsement": "not-rated",
       "installation": "observed",
-      "evidence_label": "已在本机发现，待评价",
-      "evidence_note": "本机检测不代表个人认可。",
+      "evidence_label": "已收录，待评价",
+      "evidence_note": "文件检索工具收录，暂未附使用评价。",
       "checked_on": "2026-10-18"
     },
     {
@@ -118,7 +118,7 @@
       "endorsement": "candidate",
       "installation": "unknown",
       "evidence_label": "待试用",
-      "evidence_note": "官方资料核查与编辑选题，未取得用户试用评价。",
+      "evidence_note": "依据官方资料整理，待试用。",
       "checked_on": "2026-10-18"
     },
     {
@@ -148,7 +148,7 @@
       "endorsement": "candidate",
       "installation": "unknown",
       "evidence_label": "待试用",
-      "evidence_note": "官方资料核查与编辑选题，未取得用户试用评价。",
+      "evidence_note": "依据官方资料整理，待试用。",
       "checked_on": "2026-10-18"
     },
     {
@@ -178,7 +178,7 @@
       "endorsement": "candidate",
       "installation": "unknown",
       "evidence_label": "待试用",
-      "evidence_note": "官方资料核查与编辑选题，未取得用户试用评价。",
+      "evidence_note": "依据官方资料整理，待试用。",
       "checked_on": "2026-10-18"
     },
     {
@@ -186,7 +186,7 @@
       "name": "Listary",
       "category": "files",
       "purpose": "在打开、保存和上传对话框里快速跳转项目文件夹。经常找素材路径时，价值比多装一个启动器更明确。",
-      "scenario": "给 AI 上传本地文件、给飞书附文件、在设计软件保存导出时，少重复逐层点目录。需在用户实际应用中试兼容性。",
+      "scenario": "给 AI 上传本地文件、给飞书附文件、在设计软件保存导出时，少重复逐层点目录。请在常用应用中先试兼容性。",
       "first_step": "先在资源管理器打开一个项目目录，再打开应用的文件对话框，试 Quick Switch；也可点建议目录或用 Ctrl+G。",
       "pricing": "个人用途免费；工作/商业使用需 Pro。官网 Pro 标价 19.95 美元一次付费，终身更新；实际税费与结账价以页面为准。",
       "privacy": "会建立文件索引并提供历史目录建议；官网隐私政策列出 Sentry、RudderStack 等第三方服务及错误日志收集，不能写成“完全离线、零遥测”。先检查索引目录和隐私选项。",
@@ -216,7 +216,7 @@
       "endorsement": "candidate",
       "installation": "unknown",
       "evidence_label": "待试用",
-      "evidence_note": "官方资料核查与编辑选题，未取得用户试用评价。",
+      "evidence_note": "依据官方资料整理，待试用。",
       "checked_on": "2026-10-18"
     },
     {
@@ -254,7 +254,7 @@
       "endorsement": "candidate",
       "installation": "unknown",
       "evidence_label": "待试用",
-      "evidence_note": "官方资料核查与编辑选题，未取得用户试用评价。",
+      "evidence_note": "依据官方资料整理，待试用。",
       "checked_on": "2026-10-18"
     },
     {
@@ -280,14 +280,14 @@
       "endorsement": "not-rated",
       "installation": "observed",
       "evidence_label": "已收录，尚未评价",
-      "evidence_note": "用户同意收录，不扩写个人使用评价。",
+      "evidence_note": "基础工具收录，暂未附使用评价。",
       "checked_on": "2026-10-18"
     },
     {
       "id": "manictime",
       "name": "ManicTime",
       "category": "reading",
-      "purpose": "本人确认有用。用应用时间线回顾写代码、查资料与设计的时间分布；截图和更细的内容记录仍应按需开启。",
+      "purpose": "用应用时间线回顾写代码、浏览器和设计工具的时间分布。截图和更细的内容记录按需开启。",
       "scenario": "适合回顾碎片化工作和项目耗时；时间线是帮助回忆的线索，不能直接把在线时长当成产出。",
       "first_step": "先检查当前 Tracking 与 Screenshots 设置；建议从应用级统计、关闭截图开始，按需再决定窗口标题和文档记录。",
       "pricing": "专有软件；Windows 有免费版，Pro 授权和 Cloud 订阅付费。各版本提供试用。",
@@ -321,10 +321,10 @@
       ],
       "endorsement": "recommended",
       "installation": "observed",
-      "evidence_label": "用户实用推荐",
-      "evidence_note": "用户明确确认有用；不把在线时长等同于产出。",
+      "evidence_label": "站长推荐",
+      "evidence_note": "站长认可：回顾应用使用时间，记录范围按需开启。在线时长不等于产出。",
       "checked_on": "2026-10-18"
     }
   ],
-  "disclosure": "推荐依据与安装状态分开记录；收藏、检测到运行或安装都不等于用户推荐。收费与平台支持以来源日期及官方说明为准。"
+  "disclosure": "推荐代表站长的使用评价；收录或安装记录不代表推荐。收费与平台支持以来源日期及官方说明为准。"
 }

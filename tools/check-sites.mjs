@@ -12,7 +12,7 @@ assert.equal(data.categories.length,10);
 assert.equal(data.categories.reduce((sum,c)=>sum+c.count,0),data.entries.length);
 for(const category of data.categories) assert.equal(data.entries.filter(e=>e.category===category.id).length,category.count);
 assert.equal([...guideHtml.matchAll(/class="topic-card"/g)].length,6);
-assert(html.includes('不计入 61 张知识卡'));
+assert(html.includes('知识卡另行统计'));
 const allowedKeys=['id','name','identity','category','tags','purpose','url','topics','verification','referral','caution'].sort();
 const topics=new Set(['tools','subscription','api-cost','agent','creation','cloud']);
 for(const entry of data.entries) {

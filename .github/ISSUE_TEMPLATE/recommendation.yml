@@ -1,0 +1,67 @@
+{
+  "name": "网站 / Idea 推荐",
+  "description": "分享一个网站或想法，说明用途和推荐原因。",
+  "title": "[推荐] ",
+  "body": [
+    {
+      "type": "markdown",
+      "attributes": {
+        "value": "反馈会公开显示在本仓库 Issues。请先[搜索已有反馈](https://github.com/zxs4KHf/ai-native-community/issues?q=is%3Aissue)，不要提交个人信息、账号、密钥、未脱敏日志或截图。安全漏洞请勿公开发 Issue，参见[私密报告说明](https://github.com/zxs4KHf/ai-native-community/security/policy)。登录 GitHub 后，检查内容并自行点击提交。"
+      }
+    },
+    {
+      "type": "input",
+      "id": "website",
+      "attributes": {
+        "label": "网站 URL（Idea 可留空）",
+        "description": "尽量提供安全官网，不要附带私人邀请码、账号或密钥。"
+      },
+      "validations": {
+        "required": false
+      }
+    },
+    {
+      "type": "textarea",
+      "id": "purpose",
+      "attributes": {
+        "label": "一句话用途 / Idea"
+      },
+      "validations": {
+        "required": true
+      }
+    },
+    {
+      "type": "textarea",
+      "id": "reason",
+      "attributes": {
+        "label": "为什么推荐？",
+        "description": "可以说明适合谁；尚未试用请直接注明。"
+      },
+      "validations": {
+        "required": true
+      }
+    },
+    {
+      "type": "input",
+      "id": "category",
+      "attributes": {
+        "label": "建议分类（可选）",
+        "placeholder": "例如：设计、学习、开发、效率工具"
+      },
+      "validations": {
+        "required": false
+      }
+    },
+    {
+      "type": "input",
+      "id": "page",
+      "attributes": {
+        "label": "所在页面（可选）",
+        "description": "仅保留本站页面路径；请勿粘贴带密钥或私人参数的链接。"
+      },
+      "validations": {
+        "required": false
+      }
+    }
+  ]
+}

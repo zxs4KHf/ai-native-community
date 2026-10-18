@@ -1,0 +1,15 @@
+{
+  "blank_issues_enabled": false,
+  "contact_links": [
+    {
+      "name": "先查重复反馈",
+      "url": "https://github.com/zxs4KHf/ai-native-community/issues?q=is%3Aissue",
+      "about": "看看问题或建议是否已有讨论，可在原 Issue 补充。"
+    },
+    {
+      "name": "安全漏洞：请勿公开提交",
+      "url": "https://github.com/zxs4KHf/ai-native-community/security/policy",
+      "about": "先查看私密报告说明；没有可用私密入口时，请通过可信私下渠道联系维护者。"
+    }
+  ]
+}
