@@ -1,10 +1,10 @@
 <div align="center">
 
-<img src="docs/images/readme-cover.svg" width="1280" alt="AI native 社区：发现入口、完成小事、留下可用经验">
+<img src="docs/images/readme-cover.svg" width="100%" alt="AI native 社区：公开 AI 工具导航与实践资料，按任务找工具、按证据学方法">
 
 # AI native 社区
 
-奥特大出生的公开 AI 实践与共建入口。
+按任务找到 AI 工具，用公开材料完成并核对一件小事。
 
 [进入社区](https://api.190675.xyz/ai-hub/) · [第一次来](https://api.190675.xyz/ai-hub/start/) · [网站导航](https://api.190675.xyz/ai-hub/tools/) · [反馈与共建](https://api.190675.xyz/ai-hub/feedback/)
 
@@ -16,21 +16,29 @@
 
 </div>
 
+![实际首页：全局搜索与网站导航、设计灵感、实践资料入口](docs/images/community-home.jpg)
+
+<sub>公开页面实景，来自与公网逐字节一致的本地构建；2026-10-19。细节与完整入口请打开站点查看。</sub>
+
+## 第一次来，先完成一个小任务
+
+1. 打开 [从一步开始](https://api.190675.xyz/ai-hub/start/)，复制站内的虚构通知练习，不用公司文件或私人材料。
+2. 在你已有的 AI 应用中，把通知整理成「任务、负责人、截止时间、待确认」的表格。
+3. 对照原材料核对：线上分享是周六 19:30，海报与报名表各有负责人；主持人、预算未知，不应被补成事实。保留修改后的结果与核对记录，就完成了第一次练习。
+
 ## 从你现在要做的事开始
 
-| 我想…… | 去这里 | 可以做什么 |
-| --- | --- | --- |
-| 第一次试试 AI | [从一步开始](https://api.190675.xyz/ai-hub/start/) | 用已有应用完成一个可检查的小任务，无需先学 API 或 Agent |
-| 按需求找工具 | [网站导航](https://api.190675.xyz/ai-hub/tools/) | 搜索、分类、身份与使用标记筛选；常用入口排在前面 |
-| 找一份设计参考 | [设计灵感](https://api.190675.xyz/ai-hub/design/) | 按动效、界面、品牌等场景浏览 19 个资源 |
-| 学具体的方法 | [实践资料](https://api.190675.xyz/ai-hub/guides/) | 阅读六专题正文、适用条件、成本与失败边界 |
-| 解决日常小痛点 | [效率工具箱](https://api.190675.xyz/ai-hub/toolbox/) | 按截图、文件、窗口等场景挑选，区分站长推荐与待评价 |
-| 分享经验或提建议 | [社区](https://api.190675.xyz/ai-hub/community/) / [反馈](https://api.190675.xyz/ai-hub/feedback/) | 了解贡献方式，提交体验、建议、Bug 或网站推荐 |
+- **第一次试试 AI → [从一步开始](https://api.190675.xyz/ai-hub/start/)**：用已有应用做一个小任务，无需先学 API 或 Agent。
+- **按需求找工具 → [网站导航](https://api.190675.xyz/ai-hub/tools/)**：搜索、分类、身份与使用标记筛选，常用入口优先。
+- **找设计参考 → [设计灵感](https://api.190675.xyz/ai-hub/design/)**：按动效、界面、品牌等场景浏览 19 个资源。
+- **学具体方法 → [实践资料](https://api.190675.xyz/ai-hub/guides/)**：六专题正文，保留适用条件、成本与失败边界。
+- **解决日常痛点 → [效率工具箱](https://api.190675.xyz/ai-hub/toolbox/)**：按截图、文件、窗口等场景挑选，区分推荐与待评价。
+- **分享或提建议 → [社区](https://api.190675.xyz/ai-hub/community/) / [反馈](https://api.190675.xyz/ai-hub/feedback/)**：贡献可复核经验，提交体验、建议、Bug 或网站推荐。
 
 还有 [提问工作台](https://api.190675.xyz/ai-hub/workshop/) 和 [视频导读](https://api.190675.xyz/ai-hub/videos/)；首页可同时搜索网站、知识卡和效率工具。
 
 ```mermaid
-flowchart LR
+flowchart TD
     A[一个明确的小任务] --> B[找入口与公开材料]
     B --> C[试做一份结果]
     C --> D[回到原文核对]
@@ -61,15 +69,6 @@ flowchart LR
 </details>
 
 六个知识专题：工具与模型、订阅与权益、API/token 成本、Agent 工作流、创作设计、云资源部署。设计目录包含视频中的 18 个主站和既有 Eyecandy，作者评价与官网用途分开呈现。
-
-<details>
-<summary>查看实际首页截图</summary>
-
-![首页局部截图：全局搜索与网站、设计、实践入口](docs/images/community-home.jpg)
-
-<sub>截图来自与公网逐字节一致的本地构建，仅包含公开页面；截图日期：2026-10-19。</sub>
-
-</details>
 
 ## 先看来源，再作判断
 
@@ -103,7 +102,8 @@ data/ + source/ → npm run build → public/ + assets.mjs → npm run check
 
 公开数据在 `data/`，排版与交互在 `source/`；构建输出 10 页、14 个白名单资源。检查覆盖既有条目、排序、邀请参数、内链、隐私边界及请求方法隔离。
 
-## 发布与回滚
+<details>
+<summary><strong>维护者：发布与回滚</strong></summary>
 
 源码使用 **分支 → PR → 无密钥 CI → main → 维护者授权发布** 的流程。PR 和 main 均运行同一套构建、检查及生成产物一致性校验。可用 GitHub CLI 查看实际状态：
 
@@ -113,3 +113,5 @@ gh run list --repo zxs4KHf/ai-native-community --branch main --workflow ci.yml -
 ```
 
 生产发布由维护者已有的本地授权适配器执行，适配器和凭据不放入公开仓库。它在 main CI 成功后，仅更新独立 `aote-ai-hub` 的 `/ai-hub/*` 路由，并回读全部公开资源、核对原问卷与其他服务。发布前保留内容快照；回滚时以备份或前一 Git 提交重建，保留路由身份并重新验证。
+
+</details>
