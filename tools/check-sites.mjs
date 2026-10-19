@@ -45,15 +45,35 @@ const expectedInvites={
   'heju-api':'https://www.hejuapi.com/register?invite_code=JoeI',
   'dragon-api':'https://newapi.dragon3api.com/sign-up?aff=mvKb',
   'beibei-api':'https://www.bb-api.com/register?aff=YM83YMD7XAUJ',
-  tokenfactory:'https://www.acampus.cloud/sign-up?aff=7G5R'
+  tokenfactory:'https://www.acampus.cloud/sign-up?aff=7G5R',
+  liangxinyun:'https://xn--9kqz23b19z.com/#/register?code=nGEcZdXl',
+  'peiqian-airport':'https://xn--mes358aby2apfg.com/register?code=57x94zbD&cover=sfw'
 };
 assert.deepEqual(Object.fromEntries(invitations.map(e=>[e.id,e.referral.url])),expectedInvites);
-assert.equal([...html.matchAll(/class="site-invite"/g)].length,9);
+assert.equal([...html.matchAll(/class="site-invite"/g)].length,11);
+const networkIds=['liangxinyun','peiqian-airport'];
+const networkDisclosure='本人邀请链接，含邀请返佣，注册可能使分享者获得平台奖励。返佣比例、提现和到账规则未核验；不承诺服务安全、可用性或收益。';
 for(const entry of invitations) {
-  assert.equal(entry.referral.disclosure,'本人邀请链接，可能获得平台奖励。现金返佣、比例、提现和到账规则均未核验；不承诺折扣或模型真实性。');
+  assert.equal(entry.referral.disclosure,networkIds.includes(entry.id)?networkDisclosure:'本人邀请链接，可能获得平台奖励。现金返佣、比例、提现和到账规则均未核验；不承诺折扣或模型真实性。');
   assert.deepEqual(Object.keys(entry.referral).sort(),['url','ownership','disclosure'].sort());
   assert(!/\d+%|到账保证|保证返佣/.test(entry.referral.disclosure));
 }
+for(const id of networkIds) {
+  const entry=data.entries.find(e=>e.id===id);
+  assert.equal(entry.category,'cloud');
+  assert.deepEqual(entry.topics,['cloud']);
+  assert.equal(entry.referral.ownership,'本人提供并确认归属');
+  assert(entry.caution.includes('未验证服务安全性'));
+  const card=html.match(new RegExp(`<article class="site-card" id="site-${id}"[\\s\\S]*?<\\/article>`))[0];
+  assert(card.includes('rel="noopener noreferrer sponsored"'));
+  assert(card.includes(expectedInvites[id].replaceAll('&','&amp;')));
+  assert(card.includes(`aria-describedby="referral-${id}"`));
+}
+assert.equal(new URL(expectedInvites.liangxinyun).hash,'#/register?code=nGEcZdXl');
+assert.equal(new URL(expectedInvites['peiqian-airport']).search,'?code=57x94zbD&cover=sfw');
+assert(!html.includes('amp;cover')||html.includes('&amp;cover=sfw'));
+assert(!html.includes('&amp;amp;cover'));
+assert(!/Arena 注册助手|Arena注册助手|Arena.*1\.0\.3/.test(html));
 assert(html.includes('rel="noopener noreferrer sponsored"'));
 assert(html.includes('本人邀请链接'));
 assert(html.includes('本人邀请链接，可能获得平台奖励')&&html.includes('现金返佣、比例、提现和到账规则均未核验'));
@@ -87,4 +107,4 @@ assert(!/displayed_reward_rate|benefit_note|ownership_evidence|Your Affiliate Co
 assert(!data.entries.some(e=>e.id==='aigc-nav'));
 assert(!/ownership_evidence|pending_entries|bookmark|browser_profile|visited_at|last_visit|搜索词|收藏路径|访问时间|AppData/i.test(clean));
 assert(!/sk-[\w-]{16,}|-----BEGIN [A-Z ]*PRIVATE KEY-----|Bearer [\w.-]{20,}/.test(clean));
-console.log(`${data.entries.length} unique site cards; original entries preserved except explicit revisions; ${revisions.removed_ids.length} retired sites; frequent order and regional links checked; 10 categories; 9 exact ownership-approved invitations; privacy checks passed.`);
+console.log(`${data.entries.length} unique site cards; original entries preserved except explicit revisions; ${revisions.removed_ids.length} retired sites; frequent order and regional links checked; 10 categories; 11 exact ownership-approved invitations; network URL parameters and disclosures checked; privacy checks passed.`);
