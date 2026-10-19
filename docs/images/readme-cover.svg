@@ -4,7 +4,7 @@
   <rect width="1200" height="280" rx="16" fill="#f7f5ef"/>
   <rect x="1" y="1" width="1198" height="278" rx="15" fill="none" stroke="#dedacf"/>
   <g id="project-title" fill="#292823">
-    <text x="64" y="65" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Microsoft YaHei',sans-serif" font-size="24" fill="#747469">奥特大出生 · AI 工具导航与实践资料</text>
+    <text x="64" y="65" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Microsoft YaHei',sans-serif" font-size="24" fill="#626158">奥特大出生 · AI 工具导航与实践资料</text>
     <text x="60" y="166" font-family="Georgia,'Noto Serif SC','Songti SC',serif" font-size="84">AI native 社区</text>
     <text x="64" y="229" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Microsoft YaHei',sans-serif" font-size="36" fill="#8e442d">按任务找工具，按证据学方法。</text>
   </g>
